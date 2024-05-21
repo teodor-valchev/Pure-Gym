@@ -103,6 +103,6 @@ function HeaderCoursel() {
             </div>
         </div>
     );
-} 
+}
 
-export default HeaderCoursel
+export default HeaderCoursel;
