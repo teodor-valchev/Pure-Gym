@@ -1,6 +1,19 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 //css.module
 const Navigation = () => {
+    const [linkClass, setLinkClass] = useState({
+        Home: false,
+        About: false
+    })
+
+    const onLinkChangeHandler = (e) => {
+        e.preventDefault()
+        const linkName = e.target.textContent;
+        
+        setLinkClass(() => ({ [linkName]: true }))
+    }
+    
     return (
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
@@ -45,13 +58,19 @@ const Navigation = () => {
                         <div className="navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav mr-auto py-0">
                                 <Link
-                                    className="nav-item nav-link active"
+                                    onClick={onLinkChangeHandler}
+                                    className={`nav-item nav-link ${
+                                        linkClass.Home && "active"
+                                    }`}
                                     to="/"
                                 >
                                     Home
                                 </Link>
                                 <Link
-                                    className="nav-item nav-link"
+                                    onClick={onLinkChangeHandler}
+                                    className={`nav-item nav-link ${
+                                        linkClass.About && "active"
+                                    }`}
                                     to="/about"
                                 >
                                     About
