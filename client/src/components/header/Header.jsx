@@ -1,4 +1,4 @@
-function Header() {
+const  Header = () => {
     return (
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
@@ -8,7 +8,7 @@ function Header() {
                         href="index.html"
                     >
                         <h1 className="m-0 display-4 text-primary text-uppercase">
-                            Gymster
+                            Pure Gym
                         </h1>
                     </a>
                 </div>

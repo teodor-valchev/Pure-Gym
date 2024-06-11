@@ -1,6 +1,6 @@
 function HeaderCoursel() {
     return (
-        <div className="container-fluid p-0 mb-5">
+        <div className="container-fluid p-0">
             <div
                 className="carousel slide"
                 data-bs-ride="carousel"
