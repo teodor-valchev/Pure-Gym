@@ -11,7 +11,7 @@ function AboutUs() {
                     <div className="position-relative h-100">
                         <img
                             className="position-absolute w-100 h-100 rounded"
-                            src="src/public/img/about.jpg"
+                            src="img/about.jpg"
                             style={{
                                 objectFit: "cover",
                             }}

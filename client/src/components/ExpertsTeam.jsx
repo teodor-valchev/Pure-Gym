@@ -14,7 +14,7 @@ function ExpertsTeam() {
                             <img
                                 alt=""
                                 className="img-fluid w-100"
-                                src="src/public/img/team-1.jpg"
+                                src="img/team-1.jpg"
                             />
                             <div className="team-overlay">
                                 <div className="d-flex align-items-center justify-content-start">
@@ -60,7 +60,7 @@ function ExpertsTeam() {
                             <img
                                 alt=""
                                 className="img-fluid w-100"
-                                src="src/public/img/team-2.jpg"
+                                src="img/team-2.jpg"
                             />
                             <div className="team-overlay">
                                 <div className="d-flex align-items-center justify-content-start">
@@ -106,7 +106,7 @@ function ExpertsTeam() {
                             <img
                                 alt=""
                                 className="img-fluid w-100"
-                                src="src/public/img/team-3.jpg"
+                                src="img/team-3.jpg"
                             />
                             <div className="team-overlay">
                                 <div className="d-flex align-items-center justify-content-start">

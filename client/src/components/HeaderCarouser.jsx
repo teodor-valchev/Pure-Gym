@@ -11,7 +11,7 @@ function HeaderCoursel() {
                         <img
                             alt="Image"
                             className="w-100"
-                            src="src/public/img/carousel-1.jpg"
+                            src="img/carousel-1.jpg"
                         />
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div
@@ -45,7 +45,7 @@ function HeaderCoursel() {
                         <img
                             alt="Image"
                             className="w-100"
-                            src="src/public/img/carousel-2.jpg"
+                            src="img/carousel-2.jpg"
                         />
                         <div className="carousel-caption d-flex flex-column align-items-center justify-content-center">
                             <div
