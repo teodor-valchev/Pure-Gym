@@ -8,8 +8,7 @@ import Footer from "./components/footer/Footer";
 
 function App() {
     return (
-        <>
-            <div>
+            <>
                 <Header />
                 <HeaderCoursel />
                 {/* <AboutUs />
@@ -18,8 +17,7 @@ function App() {
                 <ExpertsTeam />
                 */}
                 <Footer />
-            </div>
-        </>
+            </>
     );
 }
 

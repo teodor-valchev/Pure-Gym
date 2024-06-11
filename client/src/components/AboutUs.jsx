@@ -1,4 +1,4 @@
-function AboutUs() {
+const AboutUs = () => {
     return (
         <div className="container-fluid p-5">
             <div className="row gx-5">
@@ -24,7 +24,7 @@ function AboutUs() {
                             About Us
                         </h5>
                         <h1 className="display-3 text-uppercase mb-0">
-                            Welcome to Gymster
+                            Welcome to Pure Gym
                         </h1>
                     </div>
                     <div className="rounded bg-dark p-5">

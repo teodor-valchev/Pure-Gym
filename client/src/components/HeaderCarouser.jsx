@@ -24,7 +24,7 @@ function HeaderCoursel() {
                                     Best Gym Center
                                 </h5>
                                 <h1 className="display-2 text-white text-uppercase mb-md-4">
-                                    Build Your Body Strong With Gymster
+                                    Build Your Body Strong With Pure Gym
                                 </h1>
                                 <a
                                     className="btn btn-primary py-md-3 px-md-5 me-3"
