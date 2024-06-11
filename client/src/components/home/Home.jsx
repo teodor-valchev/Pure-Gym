@@ -1,4 +1,5 @@
-function HeaderCoursel() {
+
+const Home = () => {
     return (
         <div className="container-fluid p-0">
             <div
@@ -105,4 +106,4 @@ function HeaderCoursel() {
     );
 }
 
-export default HeaderCoursel;
+export default Home;

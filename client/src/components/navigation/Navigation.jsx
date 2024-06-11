@@ -1,6 +1,6 @@
+import { Link } from "react-router-dom";
 //css.module
-
-const Header = () => {
+const Navigation = () => {
     return (
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
@@ -44,18 +44,18 @@ const Header = () => {
                         </button>
                         <div className="navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav mr-auto py-0">
-                                <a
+                                <Link
                                     className="nav-item nav-link active"
-                                    href="index.html"
+                                    to="/"
                                 >
                                     Home
-                                </a>
-                                <a
+                                </Link>
+                                <Link
                                     className="nav-item nav-link"
-                                    href="about.html"
+                                    to="/about"
                                 >
                                     About
-                                </a>
+                                </Link>
                                 <a
                                     className="nav-item nav-link"
                                     href="class.html"
@@ -90,6 +90,6 @@ const Header = () => {
             </div>
         </div>
     );
-}
+};
 
-export default Header;
+export default Navigation;
