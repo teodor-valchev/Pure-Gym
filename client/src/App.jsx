@@ -7,6 +7,7 @@ import Classes from "./components/Classes";
 import TrainingReview from "./components/TrainingReview";
 import ExpertsTeam from "./components/ExpertsTeam";
 import Footer from "./components/footer/Footer";
+import Register from "./components/register/Register";
 
 function App() {
     return (
@@ -15,14 +16,16 @@ function App() {
 
             <Routes>
                 <Route path="/" element={<Home />}></Route>
-                <Route path="/about" element={<AboutUs/>}></Route>
+                <Route path="/about" element={<AboutUs />}></Route>
+                <Route path="/register" element={<Register />}></Route>
+
                 {/* 
                         <Classes />
                         <TrainingReview />
                         <ExpertsTeam />
                         */}
             </Routes>
-            
+
             <Footer />
         </>
     );

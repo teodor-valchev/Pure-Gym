@@ -4,15 +4,16 @@ import { Link } from "react-router-dom";
 const Navigation = () => {
     const [linkClass, setLinkClass] = useState({
         Home: true,
-        About: false
-    })
+        About: false,
+        Register: false,
+    });
 
     const onLinkChangeHandler = (e) => {
         const linkName = e.target.textContent;
-        
-        setLinkClass(() => ({ [linkName]: true }))
-    }
-    
+
+        setLinkClass(() => ({ [linkName]: true }));
+    };
+
     return (
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
@@ -92,9 +93,13 @@ const Navigation = () => {
                                 >
                                     Contact
                                 </a>
-                                <a className="nav-item nav-link" href="#">
+                                <Link
+                                    onClick={onLinkChangeHandler}
+                                    className="nav-item nav-link"
+                                    to="/register"
+                                >
                                     Register
-                                </a>
+                                </Link>
                                 <a className="nav-item nav-link" href="#">
                                     Login
                                 </a>
