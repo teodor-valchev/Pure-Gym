@@ -1,10 +1,12 @@
-import styles from'./Footer.module.css'
+import { Link } from 'react-router-dom';
+import styles from './Footer.module.css'
+
 
 const Footer = () => {
     return (
         <div>
             <div className="container-fluid bg-dark text-secondary">
-                <div className={`row ${styles['footer-links']}`}>
+                <div className={`row ${styles["footer-links"]}`}>
                     <div className="col-lg-10 col-md-6">
                         <div className="row gx-5">
                             <div className="col-lg-4 col-md-12 pt-5 mb-5">
@@ -13,36 +15,24 @@ const Footer = () => {
                                 </h4>
                                 <div className="d-flex mb-2">
                                     <i className="bi bi-geo-alt text-primary me-2" />
-                                    <p className="mb-0">
-                                        123 Street, New York, USA
-                                    </p>
+                                    <p className="mb-0">Bulgaria, Haskovo</p>
                                 </div>
                                 <div className="d-flex mb-2">
                                     <i className="bi bi-envelope-open text-primary me-2" />
-                                    <p className="mb-0">teo.thenx@gmail.com </p>
+                                    <p className="mb-0">
+                                        teo.valxev@gmail.com{" "}
+                                    </p>
                                 </div>
                                 <div className="d-flex mt-4">
                                     <a
                                         className="btn btn-primary btn-square rounded-circle me-2"
-                                        href="#"
-                                    >
-                                        <i className="fab fa-twitter" />
-                                    </a>
-                                    <a
-                                        className="btn btn-primary btn-square rounded-circle me-2"
-                                        href="#"
-                                    >
-                                        <i className="fab fa-facebook-f" />
-                                    </a>
-                                    <a
-                                        className="btn btn-primary btn-square rounded-circle me-2"
-                                        href="#"
+                                        href="https://www.linkedin.com/in/teodor-valchev/"
                                     >
                                         <i className="fab fa-linkedin-in" />
                                     </a>
                                     <a
                                         className="btn btn-primary btn-square rounded-circle"
-                                        href="#"
+                                        href="https://www.instagram.com/teo_thenx/"
                                     >
                                         <i className="fab fa-instagram" />
                                     </a>
@@ -53,11 +43,14 @@ const Footer = () => {
                                     Quick Links
                                 </h4>
                                 <div className="d-flex flex-column justify-content-start">
-                                    <a className="text-secondary mb-2" href="#">
+                                    <a className="text-secondary mb-2" href="/">
                                         <i className="bi bi-arrow-right text-primary me-2" />
                                         Home
                                     </a>
-                                    <a className="text-secondary mb-2" href="#">
+                                    <a
+                                        className="text-secondary mb-2"
+                                        href="/about"
+                                    >
                                         <i className="bi bi-arrow-right text-primary me-2" />
                                         About Us
                                     </a>
@@ -79,10 +72,8 @@ const Footer = () => {
                                     </a>
                                 </div>
                             </div>
-
                         </div>
                     </div>
-
                 </div>
             </div>
             <div
@@ -91,7 +82,7 @@ const Footer = () => {
                     background: "#111111",
                 }}
             >
-                <div className={`row ${styles['footer-text']}`}>
+                <div className={`row ${styles["footer-text"]}`}>
                     <div className="col-lg-8">
                         <div className="py-lg-4 text-center">
                             <p className="text-secondary mb-0">

@@ -3,12 +3,11 @@ import { Link } from "react-router-dom";
 //css.module
 const Navigation = () => {
     const [linkClass, setLinkClass] = useState({
-        Home: false,
+        Home: true,
         About: false
     })
 
     const onLinkChangeHandler = (e) => {
-        e.preventDefault()
         const linkName = e.target.textContent;
         
         setLinkClass(() => ({ [linkName]: true }))

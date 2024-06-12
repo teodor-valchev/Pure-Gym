@@ -12,6 +12,7 @@ function App() {
     return (
         <>
             <Navigation />
+
             <Routes>
                 <Route path="/" element={<Home />}></Route>
                 <Route path="/about" element={<AboutUs/>}></Route>
@@ -21,6 +22,7 @@ function App() {
                         <ExpertsTeam />
                         */}
             </Routes>
+            
             <Footer />
         </>
     );
