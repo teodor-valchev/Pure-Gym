@@ -7,6 +7,7 @@ const Navigation = () => {
         Home: true,
         About: false,
         Register: false,
+        Login: false,
     });
 
     const onLinkChangeHandler = (e) => {
@@ -96,12 +97,20 @@ const Navigation = () => {
                                 </a>
                                 <Link
                                     onClick={onLinkChangeHandler}
-                                    className="nav-item nav-link"
+                                    className={`nav-item nav-link ${
+                                        linkClass.Register && "active"
+                                    }`}
                                     to={Path.Register}
                                 >
                                     Register
                                 </Link>
-                                <Link className="nav-item nav-link" to={Path.Login}>
+                                <Link
+                                    onClick={onLinkChangeHandler}
+                                    className={`nav-item nav-link ${
+                                        linkClass.Login && "active"
+                                    }`}
+                                    to={Path.Login}
+                                >
                                     Login
                                 </Link>
                                 <a className="nav-item nav-link" href="#">
