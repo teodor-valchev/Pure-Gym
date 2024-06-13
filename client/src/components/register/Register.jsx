@@ -1,47 +1,29 @@
-import { useEffect, useState } from "react";
 import Alert from "react-bootstrap/Alert";
 
-import { validateRegistrationValues } from "../../utils/validation";
 import styles from "./Register.module.css";
+import useForm from "../hooks/useForm";
 
 const RegisterKeys = {
     Username: "username",
     Email: "email",
     Password: "password",
-    RepeatPass: "repeatPass",
+    RepeatPassword: "repeatPass",
 };
 
 const Register = () => {
-    const [errors, setErrors] = useState({});
-    const [values, setValues] = useState({
-        [RegisterKeys.Username]: "",
-        [RegisterKeys.Email]: "",
-        [RegisterKeys.Password]: "",
-        [RegisterKeys.RepeatPassword]: "",
-    });
-    const [submitting, setSubmitting] = useState(false);
+    const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
+        registerSubmitHandler,
+        {
+            [RegisterKeys.Username]: "",
+            [RegisterKeys.Email]: "",
+            [RegisterKeys.Password]: "",
+            [RegisterKeys.RepeatPassword]: "",
+        }
+    );
 
-        useEffect(() => {
-            if (Object.keys(errors).length === 0 && submitting) {
-                setValues({
-                    [RegisterKeys.Username]: "",
-                    [RegisterKeys.Email]: "",
-                    [RegisterKeys.Password]: "",
-                    [RegisterKeys.RepeatPassword]: "",
-                });
-            }
-        }, [errors]);
-
-    const onChange = (e) => {
-        const { name, value } = e.target;
-        setValues((state) => ({ ...state, [name]: value }));
-    };
-
-    const OnFormSubmit = (e) => {
-        e.preventDefault();
-        setErrors(validateRegistrationValues(values));
-        setSubmitting(true);
-    };
+    function registerSubmitHandler(values) {
+        console.log(values);
+    }
 
 
     return (
@@ -111,10 +93,10 @@ const Register = () => {
                             <input
                                 type="password"
                                 className="form-control bg-light border-0 px-4"
-                                name={RegisterKeys.RepeatPass}
+                                name={RegisterKeys.RepeatPassword}
                                 placeholder="Repeat password..."
                                 onChange={onChange}
-                                value={values[RegisterKeys.RepeatPass]}
+                                value={values[RegisterKeys.RepeatPassword]}
                             />
                         </div>
                         <div className="col-5 mt-2 p-4">
