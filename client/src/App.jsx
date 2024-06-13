@@ -10,30 +10,17 @@ import Footer from "./components/footer/Footer";
 import Register from "./components/users/register/Register";
 import Path from "./paths";
 import Login from "./components/users/login/Login";
-import * as authService from './services/authService'
-import { useState } from "react";
+import AuthProvider from "./context/authContext";
 
 function App() {
-
-    const [auth, setAuth] = useState({})
-    
-        async function loginSubmitHandler(userData) {
-            const user = await authService.login(userData)
-            setAuth(user);
-
-    }
-
-    console.log(auth);
-    
     return (
-        <>
+        <AuthProvider>
             <Navigation />
-
             <Routes>
                 <Route path={Path.Home} element={<Home />}></Route>
                 <Route path={Path.About} element={<AboutUs />}></Route>
                 <Route path={Path.Register} element={<Register />}></Route>
-                <Route path={Path.Login} element={<Login loginSubmitHandler={loginSubmitHandler} />}></Route>
+                <Route path={Path.Login} element={<Login />}></Route>
 
                 {/* 
                         <Classes />
@@ -43,7 +30,7 @@ function App() {
             </Routes>
 
             <Footer />
-        </>
+        </AuthProvider>
     );
 }
 

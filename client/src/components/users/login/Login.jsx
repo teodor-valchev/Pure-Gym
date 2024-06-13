@@ -1,14 +1,18 @@
+import { useContext } from "react";
 import Alert from "react-bootstrap/Alert";
 
-import styles from "./Login.module.css";
+import { authContext } from "../../../context/authContext";
 import useForm from "../../hooks/useForm";
+
+import styles from "./Login.module.css";
 
 const LoginKeys = {
     Email: "email",
     Password: "password",
 };
 
-const Login = ({ loginSubmitHandler }) => {
+const Login = () => {
+    const { loginSubmitHandler } = useContext(authContext);
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
         loginSubmitHandler,
         {
