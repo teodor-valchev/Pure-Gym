@@ -9,6 +9,7 @@ import ExpertsTeam from "./components/ExpertsTeam";
 import Footer from "./components/footer/Footer";
 import Register from "./components/users/register/Register";
 import Path from "./paths";
+import Login from "./components/users/login/Login";
 
 function App() {
     return (
@@ -19,6 +20,7 @@ function App() {
                 <Route path={Path.Home} element={<Home />}></Route>
                 <Route path={Path.About} element={<AboutUs />}></Route>
                 <Route path={Path.Register} element={<Register />}></Route>
+                <Route path={Path.Login} element={<Login />}></Route>
 
                 {/* 
                         <Classes />

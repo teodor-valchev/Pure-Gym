@@ -3,7 +3,7 @@ const Path = {
     About: "/about",
     Register: "/users/register",
     Login: "/users/login",
-    Login: "/users/logout",
+    Logout: "/users/logout",
 };
 
 export default Path

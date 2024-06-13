@@ -5,10 +5,10 @@ form {
     border-radius: 60px;
 }
 
-.register-form {
+.login-form {
     position: relative;
     width: 100%;
-    height: 100vh;
+    height: 100vh; 
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,13 +21,13 @@ form {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("../../../../public/img/background-img.jpg"); 
+    background-image: url("../../../../public/img/background-img.jpg");
     background-size: cover;
     background-position: center;
     z-index: 1;
 }
 
-.register-form-elements {
+.login-form-elements {
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -101,9 +101,9 @@ const Navigation = () => {
                                 >
                                     Register
                                 </Link>
-                                <a className="nav-item nav-link" href="#">
+                                <Link className="nav-item nav-link" to={Path.Login}>
                                     Login
-                                </a>
+                                </Link>
                                 <a className="nav-item nav-link" href="#">
                                     Logout
                                 </a>
