@@ -21,6 +21,7 @@ const Login = () => {
         }
     );
 
+    console.log(typeof(errors));
     return (
         <div className={`col-lg-5 ${styles["login-form"]}`}>
             <div className={styles["background-image"]}></div>

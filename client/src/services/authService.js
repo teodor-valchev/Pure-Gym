@@ -1,7 +1,6 @@
 const BASE_URL = "http://localhost:3030/users";
 
 export const login = async (userData) => {
-    try {
         const fetchData = await fetch(`${BASE_URL}/login`, {
             method: "POST",
             headers: {
@@ -12,8 +11,9 @@ export const login = async (userData) => {
 
         const data = await fetchData.json();
 
+        if (!fetchData.ok) {
+            throw new Error(data.message)
+        }
+
         return data;
-    } catch (err) {
-        console.log(err);
-    }
 };

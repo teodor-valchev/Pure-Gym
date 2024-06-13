@@ -22,17 +22,12 @@ export const validateUserRegisterValues = (inputValues) => {
 };
 
 // need to check the user and than show appropriate message
-export const validateUserLoginValues = (inputValues) => {
-    const email = inputValues.email;
-    const password = inputValues.password;
-
+export const validateUserLoginValues = async (errorMsg) => {
     let inputErrors = {};
 
-    if (email.length < 5) {
-        inputErrors.Email = "Email must be at least 5 characters!";
-    }
-    if (password === "") {
-        inputErrors.Password = "Password is empty!";
+    if (errorMsg) {
+        inputErrors.Email = errorMsg;
+        inputErrors.Password = errorMsg;
     }
     return inputErrors;
 };
