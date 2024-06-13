@@ -8,7 +8,7 @@ const LoginKeys = {
     Password: "password",
 };
 
-const Login = () => {
+const Login = ({ loginSubmitHandler }) => {
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
         loginSubmitHandler,
         {
@@ -16,10 +16,6 @@ const Login = () => {
             [LoginKeys.Password]: "",
         }
     );
-
-    function loginSubmitHandler(values) {
-        console.log(values);
-    }
 
     return (
         <div className={`col-lg-5 ${styles["login-form"]}`}>
