@@ -1,25 +1,33 @@
 import { useEffect, useState } from "react";
 import Alert from "react-bootstrap/Alert";
 
+import { validateRegistrationValues } from "../../utils/validation";
 import styles from "./Register.module.css";
+
+const RegisterKeys = {
+    Username: "username",
+    Email: "email",
+    Password: "password",
+    RepeatPass: "repeatPass",
+};
 
 const Register = () => {
     const [errors, setErrors] = useState({});
     const [values, setValues] = useState({
-        username: "",
-        email: "",
-        password: "",
-        repeatPass: "",
+        [RegisterKeys.Username]: "",
+        [RegisterKeys.Email]: "",
+        [RegisterKeys.Password]: "",
+        [RegisterKeys.RepeatPassword]: "",
     });
     const [submitting, setSubmitting] = useState(false);
 
         useEffect(() => {
             if (Object.keys(errors).length === 0 && submitting) {
                 setValues({
-                    username: "",
-                    email: "",
-                    password: "",
-                    repeatPass: "",
+                    [RegisterKeys.Username]: "",
+                    [RegisterKeys.Email]: "",
+                    [RegisterKeys.Password]: "",
+                    [RegisterKeys.RepeatPassword]: "",
                 });
             }
         }, [errors]);
@@ -29,32 +37,9 @@ const Register = () => {
         setValues((state) => ({ ...state, [name]: value }));
     };
 
-    const validateValues = (inputValues) => {
-        const username = inputValues.username;
-        const email = inputValues.email;
-        const password = inputValues.password;
-        const repeatPass = inputValues.repeatPass;
-
-        let inputErrors = {};
-
-        if (username.length < 5) {
-            inputErrors.username = "Username must be at least 5 characters!";
-        }
-        if (email.length < 5) {
-            inputErrors.email = "Email must be at least 5 characters!";
-        }
-        if (password === "") {
-            inputErrors.password = "Password is empty!";
-        }
-        if (password !== repeatPass) {
-            inputErrors.password = "Password mismatch!";
-        }
-        return inputErrors;
-    };
-
     const OnFormSubmit = (e) => {
         e.preventDefault();
-        setErrors(validateValues(values));
+        setErrors(validateRegistrationValues(values));
         setSubmitting(true);
     };
 
@@ -75,61 +60,61 @@ const Register = () => {
                     </h2>
                     <div className={styles["register-form-elements"]}>
                         <div className="col-5 pb-3 pt-3">
-                            {errors.username && (
+                            {errors.Username && (
                                 <p className={styles.error}>
-                                    {errors.username}
+                                    {errors.Username}
                                 </p>
                             )}
                             <input
                                 type="text"
                                 className="form-control bg-light border-0 px-4"
-                                name="username"
+                                name={RegisterKeys.Username}
                                 placeholder="Username..."
                                 onChange={onChange}
-                                value={values.username}
+                                value={values[RegisterKeys.Username]}
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
-                            {errors.email && (
-                                <p className={styles.error}>{errors.email}</p>
+                            {errors.Email && (
+                                <p className={styles.error}>{errors.Email}</p>
                             )}
                             <input
                                 type="email"
                                 className="form-control bg-light border-0 px-4"
-                                name="email"
+                                name={RegisterKeys.Email}
                                 placeholder="Email..."
                                 onChange={onChange}
-                                value={values.email}
+                                value={values[RegisterKeys.Email]}
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
-                            {errors.password && (
+                            {errors.Password && (
                                 <p className={styles.error}>
-                                    {errors.password}
+                                    {errors.Password}
                                 </p>
                             )}
                             <input
                                 type="password"
                                 className="form-control bg-light border-0 px-4"
-                                name="password"
+                                name={RegisterKeys.Password}
                                 placeholder="Password..."
                                 onChange={onChange}
-                                value={values.password}
+                                value={values[RegisterKeys.Password]}
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
-                            {errors.password && (
+                            {errors.Password && (
                                 <p className={styles.error}>
-                                    {errors.password}
+                                    {errors.Password}
                                 </p>
                             )}
                             <input
                                 type="password"
                                 className="form-control bg-light border-0 px-4"
-                                name="repeatPass"
+                                name={RegisterKeys.RepeatPass}
                                 placeholder="Repeat password..."
                                 onChange={onChange}
-                                value={values.repeatPass}
+                                value={values[RegisterKeys.RepeatPass]}
                             />
                         </div>
                         <div className="col-5 mt-2 p-4">
