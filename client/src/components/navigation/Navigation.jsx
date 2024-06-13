@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import Path from "../../paths";
 //css.module
 const Navigation = () => {
     const [linkClass, setLinkClass] = useState({
@@ -62,7 +63,7 @@ const Navigation = () => {
                                     className={`nav-item nav-link ${
                                         linkClass.Home && "active"
                                     }`}
-                                    to="/"
+                                    to={Path.Home}
                                 >
                                     Home
                                 </Link>
@@ -71,7 +72,7 @@ const Navigation = () => {
                                     className={`nav-item nav-link ${
                                         linkClass.About && "active"
                                     }`}
-                                    to="/about"
+                                    to={Path.About}
                                 >
                                     About
                                 </Link>
@@ -96,7 +97,7 @@ const Navigation = () => {
                                 <Link
                                     onClick={onLinkChangeHandler}
                                     className="nav-item nav-link"
-                                    to="/register"
+                                    to={Path.Register}
                                 >
                                     Register
                                 </Link>

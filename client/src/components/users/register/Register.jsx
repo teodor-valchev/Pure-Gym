@@ -1,7 +1,7 @@
 import Alert from "react-bootstrap/Alert";
 
 import styles from "./Register.module.css";
-import useForm from "../hooks/useForm";
+import useForm from "../../hooks/useForm";
 
 const RegisterKeys = {
     Username: "username",

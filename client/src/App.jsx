@@ -7,7 +7,8 @@ import Classes from "./components/Classes";
 import TrainingReview from "./components/TrainingReview";
 import ExpertsTeam from "./components/ExpertsTeam";
 import Footer from "./components/footer/Footer";
-import Register from "./components/register/Register";
+import Register from "./components/users/register/Register";
+import Path from "./paths";
 
 function App() {
     return (
@@ -15,9 +16,9 @@ function App() {
             <Navigation />
 
             <Routes>
-                <Route path="/" element={<Home />}></Route>
-                <Route path="/about" element={<AboutUs />}></Route>
-                <Route path="/register" element={<Register />}></Route>
+                <Route path={Path.Home} element={<Home />}></Route>
+                <Route path={Path.About} element={<AboutUs />}></Route>
+                <Route path={Path.Register} element={<Register />}></Route>
 
                 {/* 
                         <Classes />
