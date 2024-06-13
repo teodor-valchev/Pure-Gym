@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import Alert from "react-bootstrap/Alert";
 
 import styles from "./Register.module.css";
 
@@ -63,10 +64,11 @@ const Register = () => {
             <div className={styles["background-image"]}></div>
             <div className={`${styles["register-form"]}`}>
                 {Object.keys(errors).length === 0 && submitting ? (
-                    <span style={{ color: "red" }}>
-                        Successfully submitted ✓
-                    </span>
+                    <Alert className={styles["success-msg"]} variant="success">
+                        Registration is successful!
+                    </Alert>
                 ) : null}
+
                 <form className="bg-dark h-auto" onSubmit={OnFormSubmit}>
                     <h2 className="d-flex text-light justify-content-center pt-3 ">
                         Register

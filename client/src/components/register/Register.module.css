@@ -38,3 +38,9 @@ form {
     font-size: 12px;
     margin-bottom: 5px;
 }
+
+.success-msg {
+    position: relative;
+    bottom: 25rem;
+    left: 69rem;
+}
