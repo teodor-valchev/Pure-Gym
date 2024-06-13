@@ -34,4 +34,4 @@ function useForm(submitHandler, initialValues) {
     };
 }
 
-export default useForm
+export default useForm;

@@ -25,7 +25,6 @@ const Register = () => {
         console.log(values);
     }
 
-
     return (
         <div className={`col-lg-5 ${styles["register-form"]}`}>
             <div className={styles["background-image"]}></div>
