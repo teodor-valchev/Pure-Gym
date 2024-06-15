@@ -1,19 +1,9 @@
+import * as request from '../requester'
+
 const BASE_URL = "http://localhost:3030/users";
 
 export const login = async (userData) => {
-        const fetchData = await fetch(`${BASE_URL}/login`, {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(userData),
-        });
-
-        const data = await fetchData.json();
-
-        if (!fetchData.ok) {
-            throw new Error(data.message)
-        }
-
-        return data;
+    const result = await request.post(`${BASE_URL}/login`, userData)
+    
+    return result
 };
