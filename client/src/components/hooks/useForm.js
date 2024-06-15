@@ -28,16 +28,14 @@ function useForm(submitHandler, initialValues) {
         e.preventDefault();
 
         try {
-            // the reason not to be async is because i still haven't made the register auth logic
-            if (location.pathname === Path.Register) {
-                setErrors(validateUserRegisterValues(values));
-            }
             await submitHandler(values);
             setErrors({});
             setSubmitting(true);
-        } catch (err) {
+        } catch (errorMsg) {
             if (location.pathname === Path.Login) {
-                setErrors(await validateUserLoginValues(err.message));
+                setErrors(errorMsg);
+            } else if (location.pathname === Path.Register) {
+                setErrors(errorMsg);
             }
         }
     };

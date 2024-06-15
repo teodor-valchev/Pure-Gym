@@ -1,16 +1,16 @@
-export const validateUserRegisterValues = (inputValues) => {
+export const validateUserRegisterValues = (serviceError,inputValues) => {
+    let inputErrors = {};
+
     const username = inputValues.username;
     const email = inputValues.email;
     const password = inputValues.password;
     const repeatPass = inputValues.repeatPass;
 
-    let inputErrors = {};
-
     if (username.length < 5) {
         inputErrors.Username = "Username must be at least 5 characters!";
     }
-    if (email.length < 5) {
-        inputErrors.Email = "Email must be at least 5 characters!";
+    if (email.length < 10) {
+        inputErrors.Email = "Email must be at least 10 characters!";
     }
     if (password === "") {
         inputErrors.Password = "Password is empty!";
@@ -18,11 +18,14 @@ export const validateUserRegisterValues = (inputValues) => {
     if (password !== repeatPass) {
         inputErrors.Password = "Password mismatch!";
     }
+    if (serviceError) {
+        inputErrors.serviceError = serviceError
+    }
+
     return inputErrors;
 };
 
-// need to check the user and than show appropriate message
-export const validateUserLoginValues = async (errorMsg) => {
+export const validateUserLoginValues = (errorMsg) => {
     let inputErrors = {};
 
     if (errorMsg) {

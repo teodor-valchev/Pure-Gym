@@ -1,7 +1,11 @@
-import Alert from "react-bootstrap/Alert";
+import { useContext } from "react";
 
-import styles from "./Register.module.css";
+import { authContext } from "../../../context/authContext";
 import useForm from "../../hooks/useForm";
+
+import Alert from "react-bootstrap/Alert";
+import styles from "./Register.module.css";
+import { isEmptyObject } from "../../../utils/helperFunctions";
 
 const RegisterKeys = {
     Username: "username",
@@ -11,6 +15,7 @@ const RegisterKeys = {
 };
 
 const Register = () => {
+    const {registerSubmitHandler} = useContext(authContext)
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
         registerSubmitHandler,
         {
@@ -21,19 +26,20 @@ const Register = () => {
         }
     );
 
-    function registerSubmitHandler(values) {
-        console.log(values);
-    }
-
+    //console.log(submitting);
     return (
         <div className={`col-lg-5 ${styles["register-form"]}`}>
             <div className={styles["background-image"]}></div>
             <div className={`${styles["register-form"]}`}>
-                {Object.keys(errors).length === 0 && submitting ? (
-                    <Alert className={styles["success-msg"]} variant="success">
+                {isEmptyObject(errors) && submitting ? (
+                    <Alert className={styles.msg} variant="success">
                         Registration is successful!
                     </Alert>
-                ) : null}
+                ) : (
+                    <Alert className={styles.msg} variant="danger">
+                        {errors.serviceError}
+                    </Alert>
+                )}
 
                 <form className="bg-dark h-auto" onSubmit={OnFormSubmit}>
                     <h2 className="d-flex text-light justify-content-center pt-3 ">

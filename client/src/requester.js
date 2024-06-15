@@ -1,3 +1,6 @@
+import { isEmptyObject } from "./utils/helperFunctions";
+import { validateUserLoginValues, validateUserRegisterValues } from "./utils/validation";
+
 const buildOptions = (data) => {
     const responseBuilder = {};
 
@@ -9,11 +12,14 @@ const buildOptions = (data) => {
         responseBuilder.body = JSON.stringify(data);
     }
 
-
     return responseBuilder;
 };
 
 const request = async (method, url, data) => {
+    //need to optimize this if
+    const isLogin = url.endsWith('/login')
+    let errors;
+
     const result = await fetch(url, {
         method,
         ...buildOptions(data),
@@ -21,8 +27,14 @@ const request = async (method, url, data) => {
 
     const response = await result.json();
 
-    if (response.code === 403) {
-        throw new Error(response.message);
+    if (isLogin) {
+        errors = validateUserLoginValues(response.message);
+    } else {
+        errors = validateUserRegisterValues(response.message, data);
+    }
+
+    if (!isEmptyObject(errors)) {
+        throw errors;
     }
 
     return response;

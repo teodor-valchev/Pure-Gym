@@ -14,11 +14,17 @@ const AuthProvider = ({ children }) => {
         setAuth(user);
     }
 
+    async function registerSubmitHandler(userData) {
+        const user = await authService.register(userData);
+        setAuth(user);
+    }
+
     console.log(auth);
 
     const values = {
         user: auth,
         loginSubmitHandler,
+        registerSubmitHandler,
     };
 
     return (
