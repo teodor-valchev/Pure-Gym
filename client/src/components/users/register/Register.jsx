@@ -26,7 +26,6 @@ const Register = () => {
         }
     );
 
-    //console.log(submitting);
     return (
         <div className={`col-lg-5 ${styles["register-form"]}`}>
             <div className={styles["background-image"]}></div>
@@ -36,7 +35,7 @@ const Register = () => {
                         Registration is successful!
                     </Alert>
                 ) : (
-                    <Alert className={styles.msg} variant="danger">
+                    <Alert className={styles.msg} variant={`${!isEmptyObject(errors) && 'danger'}`}>
                         {errors.serviceError}
                     </Alert>
                 )}
