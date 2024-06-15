@@ -12,6 +12,15 @@ const buildOptions = (data) => {
         responseBuilder.body = JSON.stringify(data);
     }
 
+    const user = JSON.parse(localStorage.getItem("user"));
+
+    if (user) {
+            responseBuilder.headers = {
+                ...responseBuilder.headers,
+                "X-Authorization": user.accessToken,
+            };
+    }
+
     return responseBuilder;
 };
 
@@ -25,6 +34,11 @@ const request = async (method, url, data) => {
         ...buildOptions(data),
     });
 
+    
+    if (result.status === 204) {
+        return result;
+    }
+    
     const response = await result.json();
 
     if (isLogin) {

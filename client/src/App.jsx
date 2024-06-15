@@ -11,6 +11,7 @@ import Register from "./components/users/register/Register";
 import Path from "./paths";
 import Login from "./components/users/login/Login";
 import AuthProvider from "./context/authContext";
+import Logout from "./components/users/logout/Logout";
 
 function App() {
     return (
@@ -21,6 +22,7 @@ function App() {
                 <Route path={Path.About} element={<AboutUs />}></Route>
                 <Route path={Path.Register} element={<Register />}></Route>
                 <Route path={Path.Login} element={<Login />}></Route>
+                <Route path={Path.Logout} element={<Logout />}></Route>
 
                 {/* 
                         <Classes />

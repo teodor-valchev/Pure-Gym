@@ -113,9 +113,9 @@ const Navigation = () => {
                                 >
                                     Login
                                 </Link>
-                                <a className="nav-item nav-link" href="#">
+                                <Link className="nav-item nav-link" to={Path.Logout}>
                                     Logout
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </nav>

@@ -11,20 +11,28 @@ const AuthProvider = ({ children }) => {
 
     async function loginSubmitHandler(userData) {
         const user = await authService.login(userData);
+        
+        localStorage.setItem("user", JSON.stringify(user));
         setAuth(user);
     }
 
     async function registerSubmitHandler(userData) {
         const user = await authService.register(userData);
+        localStorage.setItem("user", JSON.stringify(user));
         setAuth(user);
     }
 
-    console.log(auth);
+    async function logoutHandler() {
+        const user = await authService.logout();
+        localStorage.removeItem("user", user);
+        setAuth({});
+    }
 
     const values = {
         user: auth,
         loginSubmitHandler,
         registerSubmitHandler,
+        logoutHandler,
     };
 
     return (
