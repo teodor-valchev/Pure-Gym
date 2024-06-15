@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import {
-    validateUserLoginValues,
-    validateUserRegisterValues,
-} from "../../utils/validation";
 import Path from "../../paths";
 
 function useForm(submitHandler, initialValues) {
