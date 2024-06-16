@@ -1,8 +1,12 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
+
+import { authContext } from "../../context/authContext";
 import Path from "../../paths";
-//css.module
+import styles from "./Navigation.module.css";
+
 const Navigation = () => {
+    const { isAuthenticated, user } = useContext(authContext);
     const [linkClass, setLinkClass] = useState({
         Home: true,
         About: false,
@@ -35,7 +39,7 @@ const Navigation = () => {
                             <div className="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i className="fa fa-user-circle text-primary me-2" />
                                 <h6 className="mb-0">
-                                    Welcome teo.thenx@gmail.com
+                                    Welcome {!user.username ? 'Guest' : user.username}
                                 </h6>
                             </div>
                         </div>
@@ -89,33 +93,38 @@ const Navigation = () => {
                                 >
                                     Trainers
                                 </a>
-                                <a
-                                    className="nav-item nav-link"
-                                    href="contact.html"
-                                >
-                                    Contact
-                                </a>
-                                <Link
-                                    onClick={onLinkChangeHandler}
-                                    className={`nav-item nav-link ${
-                                        linkClass.Register && "active"
-                                    }`}
-                                    to={Path.Register}
-                                >
-                                    Register
-                                </Link>
-                                <Link
-                                    onClick={onLinkChangeHandler}
-                                    className={`nav-item nav-link ${
-                                        linkClass.Login && "active"
-                                    }`}
-                                    to={Path.Login}
-                                >
-                                    Login
-                                </Link>
-                                <Link className="nav-item nav-link" to={Path.Logout}>
-                                    Logout
-                                </Link>
+
+                                {isAuthenticated ? (
+                                    <div className={styles.user}>
+                                        <Link
+                                            className="nav-item nav-link"
+                                            to={Path.Logout}
+                                        >
+                                            Logout
+                                        </Link>
+                                    </div>
+                                ) : (
+                                    <>
+                                        <Link
+                                            onClick={onLinkChangeHandler}
+                                            className={`nav-item nav-link ${
+                                                linkClass.Register && "active"
+                                            }`}
+                                            to={Path.Register}
+                                        >
+                                            Register
+                                        </Link>
+                                        <Link
+                                            onClick={onLinkChangeHandler}
+                                            className={`nav-item nav-link ${
+                                                linkClass.Login && "active"
+                                            }`}
+                                            to={Path.Login}
+                                        >
+                                            Login
+                                        </Link>
+                                    </>
+                                )}
                             </div>
                         </div>
                     </nav>

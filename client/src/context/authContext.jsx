@@ -30,6 +30,7 @@ const AuthProvider = ({ children }) => {
 
     const values = {
         user: auth,
+        isAuthenticated: auth.accessToken,
         loginSubmitHandler,
         registerSubmitHandler,
         logoutHandler,
