@@ -21,13 +21,16 @@ function App() {
             <Routes>
                 <Route path={Path.Home} element={<Home />}></Route>
                 <Route path={Path.About} element={<AboutUs />}></Route>
+
                 <Route path={Path.Register} element={<Register />}></Route>
                 <Route path={Path.Login} element={<Login />}></Route>
                 <Route path={Path.Logout} element={<Logout />}></Route>
+
+                <Route path={Path.Classes} element={<Classes />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
 
                 {/* 
-                        <Classes />
+                        
                         <TrainingReview />
                         <ExpertsTeam />
                         */}

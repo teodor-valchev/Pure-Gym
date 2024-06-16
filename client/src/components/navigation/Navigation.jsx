@@ -12,6 +12,7 @@ const Navigation = () => {
         About: false,
         Register: false,
         Login: false,
+        Classes: false
     });
 
     const onLinkChangeHandler = (e) => {
@@ -39,7 +40,8 @@ const Navigation = () => {
                             <div className="h-100 d-inline-flex align-items-center py-2 me-4">
                                 <i className="fa fa-user-circle text-primary me-2" />
                                 <h6 className="mb-0">
-                                    Welcome {!user.username ? 'Guest' : user.username}
+                                    Welcome{" "}
+                                    {!user.username ? "Guest" : user.username}
                                 </h6>
                             </div>
                         </div>
@@ -81,12 +83,15 @@ const Navigation = () => {
                                 >
                                     About
                                 </Link>
-                                <a
-                                    className="nav-item nav-link"
-                                    href="class.html"
+                                <Link
+                                    onClick={onLinkChangeHandler}
+                                    className={`nav-item nav-link ${
+                                        linkClass.Classes && "active"
+                                    }`}
+                                    to={Path.Classes}
                                 >
                                     Classes
-                                </a>
+                                </Link>
                                 <a
                                     className="nav-item nav-link"
                                     href="team.html"

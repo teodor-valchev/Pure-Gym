@@ -1,831 +1,458 @@
-function Classes() {
+const Classes = () => {
     return (
         <div className="container-fluid p-5">
-            <div className="mb-5 text-center">
-                <h5 className="text-primary text-uppercase">Class Schedule</h5>
-                <h1 className="display-3 text-uppercase mb-0">Working Hours</h1>
-            </div>
-            <div className="tab-class text-center">
-                <ul className="nav nav-pills d-inline-flex justify-content-center bg-dark text-uppercase rounded-pill mb-5">
-                    <li className="nav-item">
-                        <a
-                            className="nav-link rounded-pill text-white active"
-                            data-bs-toggle="pill"
-                            href="#tab-1"
-                        >
-                            Monday
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link rounded-pill text-white"
-                            data-bs-toggle="pill"
-                            href="#tab-2"
-                        >
-                            Tuesday
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link rounded-pill text-white"
-                            data-bs-toggle="pill"
-                            href="#tab-3"
-                        >
-                            Wednesday
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link rounded-pill text-white"
-                            data-bs-toggle="pill"
-                            href="#tab-4"
-                        >
-                            Thursday
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link rounded-pill text-white"
-                            data-bs-toggle="pill"
-                            href="#tab-5"
-                        >
-                            Friday
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link rounded-pill text-white"
-                            data-bs-toggle="pill"
-                            href="#tab-6"
-                        >
-                            Saturday
-                        </a>
-                    </li>
-                    <li className="nav-item">
-                        <a
-                            className="nav-link rounded-pill text-white"
-                            data-bs-toggle="pill"
-                            href="#tab-7"
-                        >
-                            Sunday
-                        </a>
-                    </li>
-                </ul>
-                <div className="tab-content">
-                    <div className="tab-pane fade show p-0 active" id="tab-1">
-                        <div className="row g-5">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00am - 8.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Power Lifting
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        John Deo
-                                    </p>
+            <div className="row g-5">
+                <div className="col-lg-8">
+                    <div className="row g-5">
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="/img/blog-1.jpg"
+                                    />
                                 </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00am - 10.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Body Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Taylor
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        10.00am - 12.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Cardio Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jack Sparrow
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        12.00pm - 2.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Weight Loose
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Robert Smith
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        2.00pm - 4.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Fitness Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Adam Phillips
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        4.00pm - 6.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Crossfit Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Alien
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00pm - 8.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Muscle Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Petter John
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00pm - 10.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Yoga Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jessy Reo
-                                    </p>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="tab-pane fade p-0" id="tab-2">
-                        <div className="row g-5">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00am - 8.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Power Lifting
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        John Deo
-                                    </p>
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="img/blog-2.jpg"
+                                    />
                                 </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00am - 10.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Body Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Taylor
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        10.00am - 12.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Cardio Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jack Sparrow
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        12.00pm - 2.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Weight Loose
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Robert Smith
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        2.00pm - 4.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Fitness Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Adam Phillips
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        4.00pm - 6.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Crossfit Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Alien
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00pm - 8.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Muscle Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Petter John
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00pm - 10.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Yoga Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jessy Reo
-                                    </p>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="tab-pane fade p-0" id="tab-3">
-                        <div className="row g-5">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00am - 8.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Power Lifting
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        John Deo
-                                    </p>
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="img/blog-3.jpg"
+                                    />
                                 </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00am - 10.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Body Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Taylor
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        10.00am - 12.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Cardio Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jack Sparrow
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        12.00pm - 2.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Weight Loose
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Robert Smith
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        2.00pm - 4.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Fitness Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Adam Phillips
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        4.00pm - 6.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Crossfit Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Alien
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00pm - 8.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Muscle Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Petter John
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00pm - 10.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Yoga Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jessy Reo
-                                    </p>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="tab-pane fade p-0" id="tab-4">
-                        <div className="row g-5">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00am - 8.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Power Lifting
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        John Deo
-                                    </p>
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="img/blog-1.jpg"
+                                    />
                                 </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00am - 10.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Body Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Taylor
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        10.00am - 12.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Cardio Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jack Sparrow
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        12.00pm - 2.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Weight Loose
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Robert Smith
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        2.00pm - 4.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Fitness Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Adam Phillips
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        4.00pm - 6.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Crossfit Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Alien
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00pm - 8.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Muscle Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Petter John
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00pm - 10.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Yoga Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jessy Reo
-                                    </p>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="tab-pane fade p-0" id="tab-5">
-                        <div className="row g-5">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00am - 8.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Power Lifting
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        John Deo
-                                    </p>
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="img/blog-2.jpg"
+                                    />
                                 </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00am - 10.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Body Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Taylor
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        10.00am - 12.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Cardio Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jack Sparrow
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        12.00pm - 2.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Weight Loose
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Robert Smith
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        2.00pm - 4.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Fitness Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Adam Phillips
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        4.00pm - 6.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Crossfit Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Alien
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00pm - 8.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Muscle Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Petter John
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00pm - 10.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Yoga Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jessy Reo
-                                    </p>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div className="tab-pane fade p-0" id="tab-6">
-                        <div className="row g-5">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00am - 8.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Power Lifting
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        John Deo
-                                    </p>
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="img/blog-3.jpg"
+                                    />
                                 </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00am - 10.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Body Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Taylor
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        10.00am - 12.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Cardio Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jack Sparrow
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        12.00pm - 2.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Weight Loose
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Robert Smith
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        2.00pm - 4.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Fitness Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Adam Phillips
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        4.00pm - 6.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Crossfit Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Alien
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00pm - 8.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Muscle Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Petter John
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00pm - 10.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Yoga Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jessy Reo
-                                    </p>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
                                 </div>
                             </div>
                         </div>
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="img/blog-1.jpg"
+                                    />
+                                </div>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-md-6">
+                            <div className="blog-item">
+                                <div className="position-relative overflow-hidden rounded-top">
+                                    <img
+                                        alt=""
+                                        className="img-fluid"
+                                        src="img/blog-2.jpg"
+                                    />
+                                </div>
+                                <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
+                                    <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">
+                                        <span>01</span>
+                                        <h6 className="text-light text-uppercase mb-0">
+                                            January
+                                        </h6>
+                                        <span>2045</span>
+                                    </div>
+                                    <a
+                                        className="h5 text-uppercase text-light"
+                                        href=""
+                                    >
+                                        Sed amet tempor amet sit kasd sea lorem
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div className="col-12">
+                            <nav aria-label="Page navigation">
+                                <ul className="pagination pagination-lg justify-content-center m-0">
+                                    <li className="page-item disabled">
+                                        <a
+                                            aria-label="Previous"
+                                            className="page-link"
+                                            href="#"
+                                        >
+                                            <span aria-hidden="true">
+                                                <i className="bi bi-arrow-left" />
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li className="page-item active">
+                                        <a className="page-link" href="#">
+                                            1
+                                        </a>
+                                    </li>
+                                    <li className="page-item">
+                                        <a className="page-link" href="#">
+                                            2
+                                        </a>
+                                    </li>
+                                    <li className="page-item">
+                                        <a className="page-link" href="#">
+                                            3
+                                        </a>
+                                    </li>
+                                    <li className="page-item">
+                                        <a
+                                            aria-label="Next"
+                                            className="page-link"
+                                            href="#"
+                                        >
+                                            <span aria-hidden="true">
+                                                <i className="bi bi-arrow-right" />
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
                     </div>
-                    <div className="tab-pane fade p-0" id="tab-7">
-                        <div className="row g-5">
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00am - 8.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Power Lifting
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        John Deo
-                                    </p>
-                                </div>
+                </div>
+                <div className="col-lg-4">
+                    <div className="mb-5">
+                        <div className="input-group">
+                            <input
+                                className="form-control p-3"
+                                placeholder="Keyword"
+                                type="text"
+                            />
+                            <button className="btn btn-primary px-4">
+                                <i className="bi bi-search" />
+                            </button>
+                        </div>
+                    </div>
+                    <div className="mb-5">
+                        <h3 className="text-uppercase mb-4">Categories</h3>
+                        <div className="d-flex flex-column justify-content-start bg-dark rounded p-4">
+                            <a
+                                className="fs-5 fw-bold text-light text-uppercase mb-2"
+                                href="#"
+                            >
+                                <i className="bi bi-arrow-right text-primary me-2" />
+                                Web Design
+                            </a>
+                            <a
+                                className="fs-5 fw-bold text-light text-uppercase mb-2"
+                                href="#"
+                            >
+                                <i className="bi bi-arrow-right text-primary me-2" />
+                                Web Development
+                            </a>
+                            <a
+                                className="fs-5 fw-bold text-light text-uppercase mb-2"
+                                href="#"
+                            >
+                                <i className="bi bi-arrow-right text-primary me-2" />
+                                Web Development
+                            </a>
+                            <a
+                                className="fs-5 fw-bold text-light text-uppercase mb-2"
+                                href="#"
+                            >
+                                <i className="bi bi-arrow-right text-primary me-2" />
+                                Keyword Research
+                            </a>
+                            <a
+                                className="fs-5 fw-bold text-light text-uppercase"
+                                href="#"
+                            >
+                                <i className="bi bi-arrow-right text-primary me-2" />
+                                Email Marketing
+                            </a>
+                        </div>
+                    </div>
+                    <div className="mb-5">
+                        <h3 className="text-uppercase mb-4">Recent Post</h3>
+                        <div className="bg-dark rounded p-4">
+                            <div className="d-flex overflow-hidden mb-3">
+                                <img
+                                    alt=""
+                                    className="img-fluid flex-shrink-0 rounded-start"
+                                    src="img/blog-1.jpg"
+                                    style={{
+                                        width: "75px",
+                                    }}
+                                />
+                                <a
+                                    className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
+                                    href=""
+                                >
+                                    Sed amet tempor amet sit kasd sea lorem
+                                </a>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00am - 10.00am
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Body Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Taylor
-                                    </p>
-                                </div>
+                            <div className="d-flex overflow-hidden mb-3">
+                                <img
+                                    alt=""
+                                    className="img-fluid flex-shrink-0 rounded-start"
+                                    src="img/blog-2.jpg"
+                                    style={{
+                                        width: "75px",
+                                    }}
+                                />
+                                <a
+                                    className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
+                                    href=""
+                                >
+                                    Sed amet tempor amet sit kasd sea lorem
+                                </a>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        10.00am - 12.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Cardio Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jack Sparrow
-                                    </p>
-                                </div>
+                            <div className="d-flex overflow-hidden mb-3">
+                                <img
+                                    alt=""
+                                    className="img-fluid flex-shrink-0 rounded-start"
+                                    src="img/blog-3.jpg"
+                                    style={{
+                                        width: "75px",
+                                    }}
+                                />
+                                <a
+                                    className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
+                                    href=""
+                                >
+                                    Sed amet tempor amet sit kasd sea lorem
+                                </a>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        12.00pm - 2.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Weight Loose
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Robert Smith
-                                    </p>
-                                </div>
+                            <div className="d-flex overflow-hidden mb-3">
+                                <img
+                                    alt=""
+                                    className="img-fluid flex-shrink-0 rounded-start"
+                                    src="img/blog-1.jpg"
+                                    style={{
+                                        width: "75px",
+                                    }}
+                                />
+                                <a
+                                    className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
+                                    href=""
+                                >
+                                    Sed amet tempor amet sit kasd sea lorem
+                                </a>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        2.00pm - 4.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Fitness Program
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Adam Phillips
-                                    </p>
-                                </div>
+                            <div className="d-flex overflow-hidden">
+                                <img
+                                    alt=""
+                                    className="img-fluid flex-shrink-0 rounded-start"
+                                    src="img/blog-2.jpg"
+                                    style={{
+                                        width: "75px",
+                                    }}
+                                />
+                                <a
+                                    className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
+                                    href=""
+                                >
+                                    Sed amet tempor amet sit kasd sea lorem
+                                </a>
                             </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        4.00pm - 6.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Crossfit Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        James Alien
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        6.00pm - 8.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Muscle Building
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Petter John
-                                    </p>
-                                </div>
-                            </div>
-                            <div className="col-lg-3 col-md-4 col-sm-6">
-                                <div className="bg-dark rounded text-center py-5 px-3">
-                                    <h6 className="text-uppercase text-light mb-3">
-                                        8.00pm - 10.00pm
-                                    </h6>
-                                    <h5 className="text-uppercase text-primary">
-                                        Yoga Class
-                                    </h5>
-                                    <p className="text-uppercase text-secondary mb-0">
-                                        Jessy Reo
-                                    </p>
-                                </div>
-                            </div>
+                        </div>
+                    </div>
+                    <div className="mb-5">
+                        <h3 className="text-uppercase mb-4">Tag Cloud</h3>
+                        <div className="d-flex flex-wrap m-n1">
+                            <a className="btn btn-dark m-1" href="">
+                                Design
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Development
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Marketing
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                SEO
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Writing
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Consulting
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Design
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Development
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Marketing
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                SEO
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Writing
+                            </a>
+                            <a className="btn btn-dark m-1" href="">
+                                Consulting
+                            </a>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 className="text-uppercase mb-4">Plain Text</h3>
+                        <div
+                            className="bg-dark rounded text-center text-light"
+                            style={{
+                                padding: "30px",
+                            }}
+                        >
+                            <p>
+                                Vero sea et accusam justo dolor accusam lorem
+                                consetetur, dolores sit amet sit dolor clita
+                                kasd justo, diam accusam no sea ut tempor magna
+                                takimata, amet sit et diam dolor ipsum amet diam
+                            </p>
+                            <a className="btn btn-primary py-2 px-4" href="">
+                                Read More
+                            </a>
                         </div>
                     </div>
                 </div>
