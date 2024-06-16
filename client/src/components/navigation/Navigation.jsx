@@ -12,7 +12,8 @@ const Navigation = () => {
         About: false,
         Register: false,
         Login: false,
-        Classes: false
+        Classes: false,
+        Create: false,
     });
 
     const onLinkChangeHandler = (e) => {
@@ -101,6 +102,16 @@ const Navigation = () => {
 
                                 {isAuthenticated ? (
                                     <div className={styles.user}>
+                                        <Link
+                                            onClick={onLinkChangeHandler}
+                                            className={`nav-item nav-link ${
+                                                linkClass.Create &&
+                                                "active"
+                                            }`}
+                                            to={Path['Create_Class']}
+                                        >
+                                            Create Class
+                                        </Link>
                                         <Link
                                             className="nav-item nav-link"
                                             to={Path.Logout}
