@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
 
-import Path from "../../paths";
+import Path from "../../lib/paths";
+
 
 function useForm(submitHandler, initialValues) {
     const [errors, setErrors] = useState({});

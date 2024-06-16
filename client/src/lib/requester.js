@@ -1,9 +1,9 @@
 import Path from "./paths";
-import { isEmptyObject } from "./utils/helperFunctions";
+import { isEmptyObject } from "../utils/helperFunctions";
 import {
     validateUserLoginValues,
     validateUserRegisterValues,
-} from "./utils/validation";
+} from "../utils/validation";
 
 const buildOptions = (data) => {
     const responseBuilder = {};

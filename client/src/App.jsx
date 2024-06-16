@@ -8,7 +8,7 @@ import TrainingReview from "./components/TrainingReview";
 import ExpertsTeam from "./components/ExpertsTeam";
 import Footer from "./components/footer/Footer";
 import Register from "./components/users/register/Register";
-import Path from "./paths";
+import Path from "./lib/paths";
 import Login from "./components/users/login/Login";
 import AuthProvider from "./context/authContext";
 import Logout from "./components/users/logout/Logout";

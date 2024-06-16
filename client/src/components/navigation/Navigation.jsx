@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { authContext } from "../../context/authContext";
-import Path from "../../paths";
 import styles from "./Navigation.module.css";
+import Path from "../../lib/paths";
 
 const Navigation = () => {
     const { isAuthenticated, user } = useContext(authContext);
