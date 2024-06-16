@@ -12,6 +12,7 @@ import Path from "./paths";
 import Login from "./components/users/login/Login";
 import AuthProvider from "./context/authContext";
 import Logout from "./components/users/logout/Logout";
+import PageNotFound from "./components/404/404";
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path={Path.Register} element={<Register />}></Route>
                 <Route path={Path.Login} element={<Login />}></Route>
                 <Route path={Path.Logout} element={<Logout />}></Route>
+                <Route path="*" element={<PageNotFound />}></Route>
 
                 {/* 
                         <Classes />
