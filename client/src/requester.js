@@ -1,5 +1,9 @@
+import Path from "./paths";
 import { isEmptyObject } from "./utils/helperFunctions";
-import { validateUserLoginValues, validateUserRegisterValues } from "./utils/validation";
+import {
+    validateUserLoginValues,
+    validateUserRegisterValues,
+} from "./utils/validation";
 
 const buildOptions = (data) => {
     const responseBuilder = {};
@@ -15,18 +19,16 @@ const buildOptions = (data) => {
     const user = JSON.parse(localStorage.getItem("user"));
 
     if (user) {
-            responseBuilder.headers = {
-                ...responseBuilder.headers,
-                "X-Authorization": user.accessToken,
-            };
+        responseBuilder.headers = {
+            ...responseBuilder.headers,
+            "X-Authorization": user.accessToken,
+        };
     }
 
     return responseBuilder;
 };
 
 const request = async (method, url, data) => {
-    //need to optimize this if
-    const isLogin = url.endsWith('/login')
     let errors;
 
     const result = await fetch(url, {
@@ -34,16 +36,15 @@ const request = async (method, url, data) => {
         ...buildOptions(data),
     });
 
-    
     if (result.status === 204) {
         return result;
     }
-    
+
     const response = await result.json();
 
-    if (isLogin) {
+    if (url.includes(Path.Login)) {
         errors = validateUserLoginValues(response.message);
-    } else {
+    } else if (url.includes(Path.Register)) {
         errors = validateUserRegisterValues(response.message, data);
     }
 
