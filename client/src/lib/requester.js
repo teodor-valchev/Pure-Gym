@@ -51,7 +51,10 @@ const buildOptions = (data, url) => {
         return responseBuilder;
     }
 
-    responseBuilder.body = JSON.stringify(data);
+    if (data) {
+        responseBuilder.body = JSON.stringify(data);
+    }
+    
     return responseBuilder;
 };
 
