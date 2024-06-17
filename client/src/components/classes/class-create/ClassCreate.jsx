@@ -36,7 +36,6 @@ const ClassCreate = () => {
         await classService.createClass(classData);
         navigate(Path.Classes)
     }
-    console.log(errors);
     return (
         <div className={`col-lg-5 ${styles["create-form"]}`}>
             <div className={styles["background-image"]}></div>

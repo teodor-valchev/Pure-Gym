@@ -3,7 +3,6 @@ import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/navigation/Navigation";
 import Home from "./components/home/Home";
 import AboutUs from "./components/about-us/AboutUs";
-import Classes from "./components/Classes";
 import TrainingReview from "./components/TrainingReview";
 import ExpertsTeam from "./components/ExpertsTeam";
 import Footer from "./components/footer/Footer";
@@ -14,6 +13,7 @@ import AuthProvider from "./context/authContext";
 import Logout from "./components/users/logout/Logout";
 import PageNotFound from "./components/404/404";
 import ClassCreate from "./components/classes/class-create/ClassCreate";
+import ClassList from "./components/classes/class-list/ClassList";
 
 function App() {
     return (
@@ -27,7 +27,7 @@ function App() {
                 <Route path={Path.Login} element={<Login />}></Route>
                 <Route path={Path.Logout} element={<Logout />}></Route>
 
-                <Route path={Path.Classes} element={<Classes />}></Route>
+                <Route path={Path.Classes} element={<ClassList />}></Route>
                 <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
 

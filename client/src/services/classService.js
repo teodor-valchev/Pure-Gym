@@ -7,3 +7,9 @@ export const createClass = async (classData) => {
 
     return result;
 }
+
+export const getAllClasses = async () => {
+    const result = await request.get(BASE_URL);
+
+    return result;
+};

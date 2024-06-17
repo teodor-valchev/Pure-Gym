@@ -6,7 +6,7 @@ import {
     validateUserRegisterValues,
 } from "../utils/validation";
 
-const buildOptions = (data, url) => {
+const buildOptions = (data, url, method) => {
     const responseBuilder = {};
 
     responseBuilder.headers = {
@@ -39,7 +39,7 @@ const buildOptions = (data, url) => {
         }
     }
 
-    if (url.endsWith("/classes")) {
+    if (url.endsWith("/classes") && method === 'POST') {
         const errors = validateClassValues(data);
         if (!isEmptyObject(errors)) {
             responseBuilder.status = 400;
@@ -59,7 +59,7 @@ const buildOptions = (data, url) => {
 };
 
 const request = async (method, url, data) => {
-    const options = buildOptions(data, url);
+    const options = buildOptions(data, url, method);
     // inputValidationErrors
     if (options.status === 400) {
         throw JSON.parse(options.body)
