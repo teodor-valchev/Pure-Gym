@@ -108,7 +108,7 @@ const Navigation = () => {
                                                 linkClass.Create &&
                                                 "active"
                                             }`}
-                                            to={Path['Create_Class']}
+                                            to={Path['Class_Create']}
                                         >
                                             Create Class
                                         </Link>

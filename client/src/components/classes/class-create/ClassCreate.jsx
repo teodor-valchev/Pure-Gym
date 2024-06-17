@@ -2,6 +2,8 @@ import Alert from "react-bootstrap/Alert";
 
 import { isEmptyObject } from "../../../utils/helperFunctions";
 import useForm from "../../hooks/useForm";
+import * as classService from "../../../services/classService";
+
 import styles from "./class-create.module.css";
 
 const CreateKeys = {
@@ -26,9 +28,10 @@ const ClassCreate = () => {
         }
     );
 
-    function onCreateHandler(values) {
-        console.log(values);
+    async function onCreateHandler(classData) {
+        await classService.createClass(classData);
     }
+    console.log(errors);
     return (
         <div className={`col-lg-5 ${styles["create-form"]}`}>
             <div className={styles["background-image"]}></div>
@@ -42,7 +45,7 @@ const ClassCreate = () => {
                         className={styles.msg}
                         variant={`${!isEmptyObject(errors) && "danger"}`}
                     >
-                        {errors.serviceError}
+                        {errors.AllFieldsRequired}
                     </Alert>
                 )}
 
@@ -52,7 +55,7 @@ const ClassCreate = () => {
                     </h2>
                     <div className={styles["create-form-elements"]}>
                         <div className="col-5 pb-3 pt-3">
-                            {errors.Username && (
+                            {errors.Title && (
                                 <p className={styles.error}>{errors.Title}</p>
                             )}
                             <input
@@ -123,9 +126,6 @@ const ClassCreate = () => {
                             ></input>
                         </div>
                         <div className="col-5 pb-3 pt-3 d-flex text-light justify-content-between">
-                            {errors.Gender && (
-                                <p className={styles.error}>{errors.Gender}</p>
-                            )}
                             <div>
                                 <input
                                     type="radio"
