@@ -1,12 +1,16 @@
 import { isAllFieldsRequired } from "./helperFunctions";
 
-export const validateUserRegisterValues = (serviceError,inputValues) => {
+export const validateUserRegisterValues = (inputValues) => {
     let inputErrors = {};
 
     const username = inputValues.username;
     const email = inputValues.email;
     const password = inputValues.password;
     const repeatPass = inputValues.repeatPass;
+
+    if (!isAllFieldsRequired(username, email, password, repeatPass)) {
+        inputErrors.AllFieldsRequired = "All fields are required!";
+    }
 
     if (username.length < 5) {
         inputErrors.Username = "Username must be at least 5 characters!";
@@ -20,19 +24,18 @@ export const validateUserRegisterValues = (serviceError,inputValues) => {
     if (password !== repeatPass) {
         inputErrors.Password = "Password mismatch!";
     }
-    if (serviceError) {
-        inputErrors.serviceError = serviceError
-    }
 
     return inputErrors;
 };
 
-export const validateUserLoginValues = (errorMsg) => {
+export const validateUserLoginValues = (inputValues) => {
     let inputErrors = {};
 
-    if (errorMsg) {
-        inputErrors.Email = errorMsg;
-        inputErrors.Password = errorMsg;
+    const email = inputValues.email;
+    const password = inputValues.password;
+
+    if (!isAllFieldsRequired(email, password)) {
+        inputErrors.AllFieldsRequired = "All fields are required!";
     }
     return inputErrors;
 };
@@ -42,7 +45,7 @@ export const validateClassValues = (inputValues) => {
 
     const title = inputValues.title;
     const description = inputValues.description;
-    const phoneNumber = inputValues['phone-number'];
+    const phoneNumber = inputValues["phone-number"];
     const age = inputValues.age;
     const image = inputValues.image;
 

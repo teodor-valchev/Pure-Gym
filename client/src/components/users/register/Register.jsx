@@ -35,8 +35,11 @@ const Register = () => {
                         Registration is successful!
                     </Alert>
                 ) : (
-                    <Alert className={styles.msg} variant={`${!isEmptyObject(errors) && 'danger'}`}>
-                        {errors.serviceError}
+                    <Alert
+                        className={styles.msg}
+                        variant={`${!isEmptyObject(errors) && "danger"}`}
+                    >
+                        {errors.AllFieldsRequired}
                     </Alert>
                 )}
 

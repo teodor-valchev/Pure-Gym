@@ -2,6 +2,7 @@ import { useContext } from "react";
 import Alert from "react-bootstrap/Alert";
 
 import { authContext } from "../../../context/authContext";
+import { isEmptyObject } from "../../../utils/helperFunctions";
 import useForm from "../../hooks/useForm";
 
 import styles from "./Login.module.css";
@@ -28,16 +29,25 @@ const Login = () => {
                     <Alert className={styles["success-msg"]} variant="success">
                         Login is successful!
                     </Alert>
-                ) : null}
-
+                ) : (
+                    <Alert
+                        className={styles.msg}
+                        variant={`${!isEmptyObject(errors) && "danger"}`}
+                    >
+                        {errors.invalidAccessToken}
+                    </Alert>
+                )}
+                
                 <form className="bg-dark h-auto" onSubmit={OnFormSubmit}>
                     <h2 className="d-flex text-light justify-content-center pt-3 ">
                         Login
                     </h2>
                     <div className={styles["login-form-elements"]}>
                         <div className="col-5 pb-3 pt-3">
-                            {errors.Email && (
-                                <p className={styles.error}>{errors.Email}</p>
+                            {errors.AllFieldsRequired && (
+                                <p className={styles.error}>
+                                    {errors.AllFieldsRequired}
+                                </p>
                             )}
                             <input
                                 type="email"
@@ -49,9 +59,9 @@ const Login = () => {
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
-                            {errors.Password && (
+                            {errors.AllFieldsRequired && (
                                 <p className={styles.error}>
-                                    {errors.Password}
+                                    {errors.AllFieldsRequired}
                                 </p>
                             )}
                             <input

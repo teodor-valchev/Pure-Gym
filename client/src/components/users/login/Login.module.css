@@ -8,7 +8,7 @@ form {
 .login-form {
     position: relative;
     width: 100%;
-    height: 100vh; 
+    height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -43,4 +43,10 @@ form {
     position: relative;
     bottom: 25rem;
     left: 69rem;
+}
+
+.msg {
+    position: relative;
+    bottom: 25rem;
+    left: 66rem;
 }

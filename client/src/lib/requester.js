@@ -22,6 +22,23 @@ const buildOptions = (data, url) => {
         };
     }
 
+    // need to optimize it somehow??
+    if (url.includes(Path.Login)) {
+        const errors = validateUserLoginValues(data);
+        if (!isEmptyObject(errors)) {
+            responseBuilder.status = 400;
+            responseBuilder.body = JSON.stringify(errors);
+            return responseBuilder;
+        }
+    } else if (url.includes(Path.Register)) {
+        const errors = validateUserRegisterValues(data);
+        if (!isEmptyObject(errors)) {
+            responseBuilder.status = 400;
+            responseBuilder.body = JSON.stringify(errors);
+            return responseBuilder;
+        }
+    }
+
     if (url.endsWith("/classes")) {
         const errors = validateClassValues(data);
         if (!isEmptyObject(errors)) {
@@ -35,13 +52,12 @@ const buildOptions = (data, url) => {
     }
 
     responseBuilder.body = JSON.stringify(data);
-    return responseBuilder
+    return responseBuilder;
 };
 
 const request = async (method, url, data) => {
-    let errors;
     const options = buildOptions(data, url);
-
+    // inputValidationErrors
     if (options.status === 400) {
         throw JSON.parse(options.body)
     }
@@ -53,19 +69,15 @@ const request = async (method, url, data) => {
 
     if (result.status === 204) {
         return result;
+    } else if (result.status === 403) {
+        //throwing service errors
+        const serviceError = {
+            invalidAccessToken: 'User doesn\'t exist' 
+        };
+        throw serviceError;
     }
 
     const response = await result.json();
-
-    if (url.includes(Path.Login)) {
-        errors = validateUserLoginValues(response.message);
-    } else if (url.includes(Path.Register)) {
-        errors = validateUserRegisterValues(response.message, data);
-    }
-
-    if (errors) {
-        throw errors;
-    }
 
     return response;
 };

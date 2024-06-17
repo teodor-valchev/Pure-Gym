@@ -1,13 +1,3 @@
-export const isEmptyObject = (obj) => {
-    return Object.keys(obj).length === 0;
-};
+export const isEmptyObject = (obj) => Object.keys(obj).length === 0;
 
-export const isAllFieldsRequired = (
-    title,
-    description,
-    phoneNumber,
-    age,
-    image
-) => {
-    return title && description && phoneNumber && age && image;
-};
+export const isAllFieldsRequired = (...params) => params.every((field) => field !== "");
