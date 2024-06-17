@@ -9,8 +9,8 @@ const CreateKeys = {
     Description: "description",
     PhoneNumber: "phone-number",
     Age: "age",
-    Image: 'image',
-    Gender: 'm'
+    Image: "image",
+    Gender: "male",
 };
 
 const CreateClass = () => {
@@ -109,20 +109,42 @@ const CreateClass = () => {
                                 value={values[CreateKeys.Image]}
                             ></input>
                         </div>
-                         <div className="col-5 pb-3 pt-3">
+                        <div className="col-5 pb-3 pt-3 d-flex text-light justify-content-between">
                             {errors.Gender && (
                                 <p className={styles.error}>{errors.Gender}</p>
                             )}
-                            <input 
-                            type="radio" name="fpl-1563003300302-0" 
-                             className="form-control bg-light border-0 px-2"
-                             value={values[CreateKeys.Image]}>
-                            </input>
-                            <label for="fpl-1563003300302-0" title="" className="">Male</label>
+                            <div>
+                                <input
+                                    type="radio"
+                                    name={CreateKeys.Gender}
+                                    className="mb-12"
+                                    value={values[CreateKeys.Gender]}
+                                ></input>
+                                <label
+                                    htmlFor="fpl-1563003300302-0"
+                                    className="p-2"
+                                >
+                                    Male
+                                </label>
+                            </div>
+                            <div>
+                                <input
+                                    type="radio"
+                                    name={CreateKeys.Gender}
+                                    className=""
+                                    value={values[CreateKeys.Gender]}
+                                ></input>
+                                <label
+                                    htmlFor="fpl-1563003300302-0"
+                                    title=""
+                                    className="p-2"
+                                >
+                                    Female
+                                </label>
+                            </div>
                         </div>
-                        
-                        
-                        <div className="col-5 mt-2 p-4">
+
+                        <div className="col-5 p-4">
                             <button
                                 className="btn btn-primary w-100 py-3"
                                 type="submit"
