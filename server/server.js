@@ -1339,9 +1339,9 @@
     	}
     };
     var seedData = {
-        courses: {
+        classes: {
             
-        }
+        },
     };
     var rules$1 = {
     	users: {
