@@ -13,7 +13,7 @@ import Login from "./components/users/login/Login";
 import AuthProvider from "./context/authContext";
 import Logout from "./components/users/logout/Logout";
 import PageNotFound from "./components/404/404";
-import CreateClass from "./components/classes/class-create";
+import ClassCreate from "./components/classes/class-create/ClassCreate";
 
 function App() {
     return (
@@ -28,7 +28,7 @@ function App() {
                 <Route path={Path.Logout} element={<Logout />}></Route>
 
                 <Route path={Path.Classes} element={<Classes />}></Route>
-                <Route path={Path['Create_Class']} element={<CreateClass />}></Route>
+                <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
 
                 {/* 

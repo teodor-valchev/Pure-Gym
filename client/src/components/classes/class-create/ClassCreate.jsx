@@ -1,7 +1,7 @@
 import Alert from "react-bootstrap/Alert";
 
-import { isEmptyObject } from "../../utils/helperFunctions";
-import useForm from "../hooks/useForm";
+import { isEmptyObject } from "../../../utils/helperFunctions";
+import useForm from "../../hooks/useForm";
 import styles from "./class-create.module.css";
 
 const CreateKeys = {
@@ -10,14 +10,25 @@ const CreateKeys = {
     PhoneNumber: "phone-number",
     Age: "age",
     Image: "image",
-    Gender: "male",
+    Gender: "gender",
 };
 
-const CreateClass = () => {
+const ClassCreate = () => {
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
-        null,
-        {}
+        onCreateHandler,
+        {
+            [CreateKeys.Title]: "",
+            [CreateKeys.Description]: "",
+            [CreateKeys.PhoneNumber]: "",
+            [CreateKeys.Age]: "",
+            [CreateKeys.Image]: "",
+            [CreateKeys.Gender]: "male",
+        }
     );
+
+    function onCreateHandler(values) {
+        console.log(values);
+    }
     return (
         <div className={`col-lg-5 ${styles["create-form"]}`}>
             <div className={styles["background-image"]}></div>
@@ -49,8 +60,8 @@ const CreateClass = () => {
                                 className="form-control bg-light border-0 px-4"
                                 name={CreateKeys.Title}
                                 placeholder="Title..."
-                                onChange={onChange}
                                 value={values[CreateKeys.Title]}
+                                onChange={onChange}
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
@@ -64,8 +75,8 @@ const CreateClass = () => {
                                 className="form-control bg-light border-0 px-4"
                                 name={CreateKeys.Description}
                                 placeholder="Description..."
-                                onChange={onChange}
                                 value={values[CreateKeys.Description]}
+                                onChange={onChange}
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
@@ -79,8 +90,8 @@ const CreateClass = () => {
                                 className="form-control bg-light border-0 px-4"
                                 name={CreateKeys.PhoneNumber}
                                 placeholder="Phone Number..."
-                                onChange={onChange}
                                 value={values[CreateKeys.PhoneNumber]}
+                                onChange={onChange}
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
@@ -94,6 +105,7 @@ const CreateClass = () => {
                                 name={CreateKeys.Age}
                                 placeholder="Age..."
                                 value={values[CreateKeys.Age]}
+                                onChange={onChange}
                             ></input>
                         </div>
                         <div className="col-5 pb-3 pt-3">
@@ -107,6 +119,7 @@ const CreateClass = () => {
                                 name={CreateKeys.Image}
                                 placeholder="Image..."
                                 value={values[CreateKeys.Image]}
+                                onChange={onChange}
                             ></input>
                         </div>
                         <div className="col-5 pb-3 pt-3 d-flex text-light justify-content-between">
@@ -117,13 +130,13 @@ const CreateClass = () => {
                                 <input
                                     type="radio"
                                     name={CreateKeys.Gender}
-                                    className="mb-12"
-                                    value={values[CreateKeys.Gender]}
-                                ></input>
-                                <label
-                                    htmlFor="fpl-1563003300302-0"
-                                    className="p-2"
-                                >
+                                    value="male"
+                                    checked={
+                                        values[CreateKeys.Gender] === "male"
+                                    }
+                                    onChange={onChange}
+                                />
+                                <label htmlFor="male" className="p-2">
                                     Male
                                 </label>
                             </div>
@@ -131,14 +144,13 @@ const CreateClass = () => {
                                 <input
                                     type="radio"
                                     name={CreateKeys.Gender}
-                                    className=""
-                                    value={values[CreateKeys.Gender]}
-                                ></input>
-                                <label
-                                    htmlFor="fpl-1563003300302-0"
-                                    title=""
-                                    className="p-2"
-                                >
+                                    value="female"
+                                    checked={
+                                        values[CreateKeys.Gender] === "female"
+                                    }
+                                    onChange={onChange}
+                                />
+                                <label htmlFor="female" className="p-2">
                                     Female
                                 </label>
                             </div>
@@ -159,4 +171,4 @@ const CreateClass = () => {
     );
 };
 
-export default CreateClass;
+export default ClassCreate;
