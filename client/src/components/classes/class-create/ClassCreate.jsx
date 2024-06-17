@@ -1,3 +1,5 @@
+import { useNavigate } from "react-router-dom";
+
 import Alert from "react-bootstrap/Alert";
 
 import { isEmptyObject } from "../../../utils/helperFunctions";
@@ -5,6 +7,7 @@ import useForm from "../../hooks/useForm";
 import * as classService from "../../../services/classService";
 
 import styles from "./class-create.module.css";
+import Path from "../../../lib/paths";
 
 const CreateKeys = {
     Title: "title",
@@ -16,6 +19,7 @@ const CreateKeys = {
 };
 
 const ClassCreate = () => {
+    const navigate = useNavigate();
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
         onCreateHandler,
         {
@@ -30,6 +34,7 @@ const ClassCreate = () => {
 
     async function onCreateHandler(classData) {
         await classService.createClass(classData);
+        navigate(Path.Classes)
     }
     console.log(errors);
     return (
