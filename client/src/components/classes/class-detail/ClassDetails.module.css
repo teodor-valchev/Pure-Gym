@@ -2,3 +2,7 @@
     display: flex;
     justify-content: space-around;
 }
+
+.delete-button:hover {
+    color: #c9491a
+}

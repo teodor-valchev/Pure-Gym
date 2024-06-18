@@ -31,6 +31,7 @@ function App() {
                 <Route path={Path.Classes} element={<ClassList />}></Route>
                 <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
                 <Route path={Path.ClassDetails} element={<ClassDetails />}></Route>
+                <Route path={Path.ClassDelete} element={<ClassDetails />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
 
                 {/* 

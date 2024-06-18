@@ -5,8 +5,9 @@ const Path = {
     Login: "/users/login",
     Logout: "/users/logout",
     Classes: "/gym/classes",
-    'Class_Create': '/gym/classes/create',
-    ClassDetails:'/gym/classes/details/:id'
+    Class_Create: "/gym/classes/create",
+    ClassDetails: "/gym/classes/details/:id",
+    ClassDelete: "/gym/classes/delete/:id",
 };
 
 export default Path

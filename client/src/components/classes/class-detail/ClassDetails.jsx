@@ -7,11 +7,13 @@ import { dateTransform } from "../../../utils/helperFunctions";
 
 import styles from './ClassDetails.module.css'
 import { authContext } from "../../../context/authContext";
+import DeleteModal from "../class-delete/ClassDelete";
 
 const ClassDetails = () => {
     const { id } = useParams('id')
     const {user} = useContext(authContext)
     const [currentClass, setCurrentClass] = useState({})
+    const [showDeleteModal, setDeleteModal] = useState(false)
     const [date, setDate] = useState([]);
     
     useEffect(() => {
@@ -26,9 +28,19 @@ const ClassDetails = () => {
 
     console.log(user);
 
-    console.log(currentClass);
+    const handleClose = () => setDeleteModal(false);
+    const handleShow = () => setDeleteModal(true);
+
     return (
         <>
+            {showDeleteModal && (
+                <DeleteModal
+                    handleClose={handleClose}
+                    handleShow={handleShow}
+                    title={currentClass.title}
+                    id={id}
+                />
+            )}
             {/* Hero Start */}
             <div className="container-fluid bg-primary p-5 bg-hero mb-5">
                 <div className="row py-5">
@@ -249,12 +261,12 @@ const ClassDetails = () => {
                                             Edit
                                         </a>
 
-                                        <a
-                                            href=""
-                                            className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
-                                        >
+                                        <button
+                                            type="button"
+                                            onClick={handleShow}
+                                            className={`d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0 ${styles['delete-button']}`}>
                                             Delete
-                                        </a>
+                                        </button>
                                     </div>
                                 </div>
                             )}

@@ -25,3 +25,9 @@ export const getSingleClass = async (id) => {
 
     return result[0];
 };
+
+export const deleteClass = async (id) => {
+    const result = await request.remove(`${BASE_URL}/${id}`);
+
+    return result;
+};
