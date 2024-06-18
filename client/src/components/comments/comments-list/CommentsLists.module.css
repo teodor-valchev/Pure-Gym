@@ -1,0 +1,12 @@
+.comment-form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50rem;
+    height: 25%;
+}
+
+.form-width {
+    width: 50%;
+    height: auto;
+}

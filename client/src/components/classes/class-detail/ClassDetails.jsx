@@ -8,6 +8,7 @@ import { dateTransform } from "../../../utils/helperFunctions";
 import styles from './ClassDetails.module.css'
 import { authContext } from "../../../context/authContext";
 import DeleteModal from "../class-delete/ClassDelete";
+import CommentsLists from "../../comments/comments-list/CommentsLists";
 
 const ClassDetails = () => {
     const { id } = useParams('id')
@@ -75,134 +76,7 @@ const ClassDetails = () => {
                             <p>{currentClass.description}</p>
                         </div>
                         {/* Blog Detail End */}
-                        {/* Comment List Start */}
-                        <div className="mb-5">
-                            <h3 className="text-uppercase mb-4">3 Comments</h3>
-                            <div className="d-flex mb-4">
-                                <img
-                                    src="img/user.jpg"
-                                    className="img-fluid rounded"
-                                    style={{ width: 45, height: 45 }}
-                                />
-                                <div className="ps-3">
-                                    <h6>
-                                        <a href="">John Doe</a>{" "}
-                                        <small>
-                                            <i>01 Jan 2045</i>
-                                        </small>
-                                    </h6>
-                                    <p>
-                                        Diam amet duo labore stet elitr invidunt
-                                        ea clita ipsum voluptua, tempor labore
-                                        accusam ipsum et no at. Kasd diam tempor
-                                        rebum magna dolores sed eirmod
-                                    </p>
-                                    <button className="btn btn-sm btn-secondary">
-                                        Reply
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="d-flex mb-4">
-                                <img
-                                    src="img/user.jpg"
-                                    className="img-fluid rounded"
-                                    style={{ width: 45, height: 45 }}
-                                />
-                                <div className="ps-3">
-                                    <h6>
-                                        <a href="">John Doe</a>{" "}
-                                        <small>
-                                            <i>01 Jan 2045</i>
-                                        </small>
-                                    </h6>
-                                    <p>
-                                        Diam amet duo labore stet elitr invidunt
-                                        ea clita ipsum voluptua, tempor labore
-                                        accusam ipsum et no at. Kasd diam tempor
-                                        rebum magna dolores sed eirmod
-                                    </p>
-                                    <button className="btn btn-sm btn-secondary">
-                                        Reply
-                                    </button>
-                                </div>
-                            </div>
-                            <div className="d-flex ms-5 mb-4">
-                                <img
-                                    src="img/user.jpg"
-                                    className="img-fluid rounded"
-                                    style={{ width: 45, height: 45 }}
-                                />
-                                <div className="ps-3">
-                                    <h6>
-                                        <a href="">John Doe</a>{" "}
-                                        <small>
-                                            <i>01 Jan 2045</i>
-                                        </small>
-                                    </h6>
-                                    <p>
-                                        Diam amet duo labore stet elitr invidunt
-                                        ea clita ipsum voluptua, tempor labore
-                                        accusam ipsum et no at. Kasd diam tempor
-                                        rebum magna dolores sed eirmod
-                                    </p>
-                                    <button className="btn btn-sm btn-secondary">
-                                        Reply
-                                    </button>
-                                </div>
-                            </div>
-                        </div>
-                        {/* Comment List End */}
-                        {/* Comment Form Start */}
-                        <div className="bg-dark rounded p-5">
-                            <h3 className="text-light text-uppercase mb-4">
-                                Leave a comment
-                            </h3>
-                            <form>
-                                <div className="row g-3">
-                                    <div className="col-12 col-sm-6">
-                                        <input
-                                            type="text"
-                                            className="form-control bg-white border-0"
-                                            placeholder="Your Name"
-                                            style={{ height: 55 }}
-                                        />
-                                    </div>
-                                    <div className="col-12 col-sm-6">
-                                        <input
-                                            type="email"
-                                            className="form-control bg-white border-0"
-                                            placeholder="Your Email"
-                                            style={{ height: 55 }}
-                                        />
-                                    </div>
-                                    <div className="col-12">
-                                        <input
-                                            type="text"
-                                            className="form-control bg-white border-0"
-                                            placeholder="Website"
-                                            style={{ height: 55 }}
-                                        />
-                                    </div>
-                                    <div className="col-12">
-                                        <textarea
-                                            className="form-control bg-white border-0"
-                                            rows={5}
-                                            placeholder="Comment"
-                                            defaultValue={""}
-                                        />
-                                    </div>
-                                    <div className="col-12">
-                                        <button
-                                            className="btn btn-primary w-100 py-3"
-                                            type="submit"
-                                        >
-                                            Leave Your Comment
-                                        </button>
-                                    </div>
-                                </div>
-                            </form>
-                        </div>
-                        {/* Comment Form End */}
+                    <CommentsLists />
                     </div>
                     {/* Sidebar Start */}
                     <div className="col-lg-4">
