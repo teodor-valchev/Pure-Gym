@@ -9,7 +9,10 @@ export const authContext = createContext();
 authContext.displayName = "Auth Context";
 
 const AuthProvider = ({ children }) => {
-    const [auth, setAuth] = useState({});
+    const [auth, setAuth] = useState(() => {
+        localStorage.removeItem('user')
+        return {}
+    });
     const navigate = useNavigate()
 
     async function loginSubmitHandler(userData) {

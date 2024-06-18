@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
 
 import * as classService from "../../../services/classService";
@@ -6,9 +6,11 @@ import Path from "../../../lib/paths";
 import { dateTransform } from "../../../utils/helperFunctions";
 
 import styles from './ClassDetails.module.css'
+import { authContext } from "../../../context/authContext";
 
 const ClassDetails = () => {
     const { id } = useParams('id')
+    const {user} = useContext(authContext)
     const [currentClass, setCurrentClass] = useState({})
     const [date, setDate] = useState([]);
     
@@ -21,6 +23,8 @@ const ClassDetails = () => {
     }, [id])
 
     console.log(date);
+
+    console.log(user);
 
     console.log(currentClass);
     return (
@@ -233,25 +237,27 @@ const ClassDetails = () => {
                         {/* Recent Post Start */}
                         <div className="mb-5">
                             <h3 className="text-uppercase mb-4">
-                                Owner of Class:{" "}
+                                Owner of Class: {currentClass.owner?.username}
                             </h3>
-                            <div className="bg-dark rounded p-3 w-50">
-                                <div className={styles["owner-container"]}>
-                                    <a
-                                        href=""
-                                        className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
-                                    >
-                                        Edit
-                                    </a>
+                            {currentClass._ownerId === user._id && (
+                                <div className="bg-dark rounded p-3 w-50">
+                                    <div className={styles["owner-container"]}>
+                                        <a
+                                            href=""
+                                            className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
+                                        >
+                                            Edit
+                                        </a>
 
-                                    <a
-                                        href=""
-                                        className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
-                                    >
-                                        Delete
-                                    </a>
+                                        <a
+                                            href=""
+                                            className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
+                                        >
+                                            Delete
+                                        </a>
+                                    </div>
                                 </div>
-                            </div>
+                            )}
                         </div>
                         {/* Recent Post End */}
                     </div>
