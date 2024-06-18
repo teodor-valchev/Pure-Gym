@@ -13,7 +13,7 @@ const Navigation = () => {
         Register: false,
         Login: false,
         Classes: false,
-        Create: false,
+        CreateClass: false,
     });
 
     const onLinkChangeHandler = (e) => {
@@ -104,8 +104,9 @@ const Navigation = () => {
                                     <div className={styles.user}>
                                         <Link
                                             onClick={onLinkChangeHandler}
-                                            className={`nav-item nav-link ${
-                                                linkClass.Create &&
+                                            className={`nav-item nav-link 
+                                                ${
+                                                linkClass.CreateClass &&
                                                 "active"
                                             }`}
                                             to={Path['Class_Create']}
