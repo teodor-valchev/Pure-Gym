@@ -206,20 +206,6 @@ const ClassDetails = () => {
                     </div>
                     {/* Sidebar Start */}
                     <div className="col-lg-4">
-                        {/* Search Form Start */}
-                        <div className="mb-5">
-                            <div className="input-group">
-                                <input
-                                    type="text"
-                                    className="form-control p-3"
-                                    placeholder="Keyword"
-                                />
-                                <button className="btn btn-primary px-4">
-                                    <i className="bi bi-search" />
-                                </button>
-                            </div>
-                        </div>
-                        {/* Search Form End */}
                         {/* Category Start */}
                         <div className="mb-5">
                             <h3 className="text-uppercase mb-4">

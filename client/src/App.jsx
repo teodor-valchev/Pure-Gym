@@ -3,8 +3,7 @@ import { Routes, Route } from "react-router-dom";
 import Navigation from "./components/navigation/Navigation";
 import Home from "./components/home/Home";
 import AboutUs from "./components/about-us/AboutUs";
-import TrainingReview from "./components/TrainingReview";
-import ExpertsTeam from "./components/ExpertsTeam";
+
 import Footer from "./components/footer/Footer";
 import Register from "./components/users/register/Register";
 import Path from "./lib/paths";
@@ -31,14 +30,8 @@ function App() {
                 <Route path={Path.Classes} element={<ClassList />}></Route>
                 <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
                 <Route path={Path.ClassDetails} element={<ClassDetails />}></Route>
-                <Route path={Path.ClassDelete} element={<ClassDetails />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
 
-                {/* 
-                        
-                        <TrainingReview />
-                        <ExpertsTeam />
-                        */}
             </Routes>
 
             <Footer />
