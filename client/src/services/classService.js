@@ -13,3 +13,9 @@ export const getAllClasses = async () => {
 
     return result;
 };
+
+export const getSingleClass = async (id) => {
+    const result = await request.get(`${BASE_URL}/${id}`);
+
+    return result;
+};

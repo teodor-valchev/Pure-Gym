@@ -9,7 +9,6 @@ const ClassList = () => {
     useEffect(() => {
         classService.getAllClasses().then((res) => setClassItems(res));
     }, []);
-    console.log(classItems);
     return (
         <div className="container-fluid p-5">
             <div className="row g-5">

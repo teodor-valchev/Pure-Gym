@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { dateTransform } from "../../../utils/helperFunctions";
+import Path from "../../../lib/paths";
 
 const ClassItem = ({ _createdOn, image, title, _id }) => {
     const [date, setDate] = useState([]);
@@ -25,7 +26,7 @@ const ClassItem = ({ _createdOn, image, title, _id }) => {
                     </div>
                     <Link
                         className="h5 text-uppercase text-light"
-                        to={`/gym/courses/details/${_id}`}
+                        to={Path.ClassDetails.replace(':id',_id)}
                     >
                         {title}
                     </Link>

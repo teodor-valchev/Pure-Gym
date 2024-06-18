@@ -10,11 +10,11 @@ export const dateTransform = (timestamp) => {
     const month = date.toLocaleString("default", { month: "long" });
     const day = date.getDate();
 
-const formattedData = {
+    const formattedData = {
         year,
         month,
-        day
-    }
+        day,
+    };
 
-    return formattedData
+    return formattedData;
 };
