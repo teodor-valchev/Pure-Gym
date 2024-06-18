@@ -1555,6 +1555,10 @@ const { title } = require("process");
                 _id: "35c62d76-8152-4626-8712-eeb96381bea8",
             },
         },
+
+        comments: {
+            
+        }
     };
     var rules$1 = {
         users: {
