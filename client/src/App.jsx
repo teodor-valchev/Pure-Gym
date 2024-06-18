@@ -14,6 +14,7 @@ import PageNotFound from "./components/404/404";
 import ClassCreate from "./components/classes/class-create/ClassCreate";
 import ClassList from "./components/classes/class-list/ClassList";
 import ClassDetails from "./components/classes/class-detail/ClassDetails";
+import ClassEdit from "./components/classes/class-edit/ClassEdit";
 
 function App() {
     return (
@@ -30,6 +31,7 @@ function App() {
                 <Route path={Path.Classes} element={<ClassList />}></Route>
                 <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
                 <Route path={Path.ClassDetails} element={<ClassDetails />}></Route>
+                <Route path={Path.ClassEdit} element={<ClassEdit />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
 
             </Routes>

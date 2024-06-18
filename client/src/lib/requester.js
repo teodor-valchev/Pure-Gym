@@ -7,6 +7,8 @@ import {
 } from "../utils/validation";
 
 const buildOptions = (data, url, method) => {
+    const id = new URL(url).pathname.split('/')[3]
+
     const responseBuilder = {};
 
     responseBuilder.headers = {
@@ -39,7 +41,17 @@ const buildOptions = (data, url, method) => {
         }
     }
 
-    if (url.endsWith("/classes") && method === 'POST') {
+    if (url.endsWith("/classes") && method === "POST") {
+        const errors = validateClassValues(data);
+        if (!isEmptyObject(errors)) {
+            responseBuilder.status = 400;
+            responseBuilder.body = JSON.stringify(errors);
+            return responseBuilder;
+        }
+        responseBuilder.body = JSON.stringify(data);
+
+        return responseBuilder;
+    } else if (url.includes(id) && method === "PUT") {
         const errors = validateClassValues(data);
         if (!isEmptyObject(errors)) {
             responseBuilder.status = 400;
@@ -50,11 +62,10 @@ const buildOptions = (data, url, method) => {
 
         return responseBuilder;
     }
-
     if (data) {
         responseBuilder.body = JSON.stringify(data);
     }
-    
+
     return responseBuilder;
 };
 
@@ -62,12 +73,12 @@ const request = async (method, url, data) => {
     const options = buildOptions(data, url, method);
     // inputValidationErrors
     if (options.status === 400) {
-        throw JSON.parse(options.body)
+        throw JSON.parse(options.body);
     }
 
     const result = await fetch(url, {
         method,
-        ...options
+        ...options,
     });
 
     if (result.status === 204) {
@@ -75,7 +86,7 @@ const request = async (method, url, data) => {
     } else if (result.status === 403) {
         //throwing service errors
         const serviceError = {
-            invalidAccessToken: 'User doesn\'t exist' 
+            invalidAccessToken: "User doesn't exist",
         };
         throw serviceError;
     }

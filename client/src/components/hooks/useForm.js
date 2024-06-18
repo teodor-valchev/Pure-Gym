@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
+import * as classService from "../../services/classService";
 
-function useForm(submitHandler, initialValues) {
+function useForm(submitHandler, initialValues,id) {
     const [errors, setErrors] = useState({});
     const [values, setValues] = useState(initialValues);
     const [submitting, setSubmitting] = useState(false);
@@ -10,6 +11,15 @@ function useForm(submitHandler, initialValues) {
             setValues(initialValues);
         }
     }, [errors]);
+
+    useEffect(() => {
+        if (id) {
+        classService
+            .getSingleClass(id)
+            .then((data) =>
+                setValues((preValues) => ({ ...preValues, ...data })));
+        }
+    }, [id]);
 
     const onChange = (e) => {
         const { name, value } = e.target;

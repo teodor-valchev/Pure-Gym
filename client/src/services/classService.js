@@ -20,7 +20,6 @@ export const getSingleClass = async (id) => {
         load: `owner=_ownerId:users`,
     });
 
-    //comments?where=recipeId%3D%228f414b4f-ab39-4d36-bedb-2ad69da9c830%22&load=author%3D_ownerId%3Ausers
     const result = await request.get(`${BASE_URL}?${query.toString()}`);
 
     return result[0];
@@ -28,6 +27,12 @@ export const getSingleClass = async (id) => {
 
 export const deleteClass = async (id) => {
     const result = await request.remove(`${BASE_URL}/${id}`);
+
+    return result;
+};
+
+export const ediClass = async (id,editData) => {
+    const result = await request.patch(`${BASE_URL}/${id}`,editData);
 
     return result;
 };

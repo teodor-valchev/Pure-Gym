@@ -240,12 +240,12 @@ const ClassDetails = () => {
                             {currentClass._ownerId === user._id && (
                                 <div className="bg-dark rounded p-3 w-50">
                                     <div className={styles["owner-container"]}>
-                                        <a
-                                            href=""
+                                        <Link
+                                            to={Path.ClassEdit.replace(':id',id)}
                                             className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                                         >
                                             Edit
-                                        </a>
+                                        </Link>
 
                                         <button
                                             type="button"
