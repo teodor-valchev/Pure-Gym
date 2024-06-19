@@ -8,7 +8,7 @@ import {
 } from "../utils/validation";
 
 const buildOptions = (data, url, method) => {
-    const id = new URL(url).pathname.split('/')[3]
+    const id = new URL(url).pathname.split("/")[3];
 
     const responseBuilder = {};
 
@@ -62,7 +62,7 @@ const buildOptions = (data, url, method) => {
         responseBuilder.body = JSON.stringify(data);
 
         return responseBuilder;
-    } else if (url.endsWith('/comments') && method === "POST") {
+    } else if (url.endsWith("/comments") && method === "POST") {
         const errors = commentsValidation(data);
         if (!isEmptyObject(errors)) {
             responseBuilder.status = 400;

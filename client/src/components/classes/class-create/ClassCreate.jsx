@@ -1,13 +1,12 @@
 import { useNavigate } from "react-router-dom";
 
-import Alert from "react-bootstrap/Alert";
-
+import Path from "../../../lib/paths";
 import { isEmptyObject } from "../../../utils/helperFunctions";
-import useForm from "../../hooks/useForm";
+import useForm from "../../../hooks/useForm";
 import * as classService from "../../../services/classService";
 
+import Alert from "react-bootstrap/Alert";
 import styles from "./class-create.module.css";
-import Path from "../../../lib/paths";
 
 const CreateKeys = {
     Title: "title",
@@ -34,7 +33,7 @@ const ClassCreate = () => {
 
     async function onCreateHandler(classData) {
         await classService.createClass(classData);
-        navigate(Path.Classes)
+        navigate(Path.Classes);
     }
     return (
         <div className={`col-lg-5 ${styles["create-form"]}`}>

@@ -1,14 +1,12 @@
 import { useNavigate, useParams } from "react-router-dom";
 
-import Alert from "react-bootstrap/Alert";
-
+import Path from "../../../lib/paths";
 import { isEmptyObject } from "../../../utils/helperFunctions";
-import useForm from "../../hooks/useForm";
+import useForm from "../../../hooks/useForm";
 import * as classService from "../../../services/classService";
 
 import styles from "./ClassEdit.module.css";
-import Path from "../../../lib/paths";
-import { useEffect } from "react";
+import Alert from "react-bootstrap/Alert";
 
 const EditKeys = {
     Title: "title",
@@ -21,7 +19,7 @@ const EditKeys = {
 
 const ClassEdit = () => {
     const navigate = useNavigate();
-    const { id } = useParams('id')
+    const { id } = useParams("id");
 
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
         onEditHandler,
@@ -32,12 +30,13 @@ const ClassEdit = () => {
             [EditKeys.Age]: "",
             [EditKeys.Image]: "",
             [EditKeys.Gender]: "male",
-        },id
+        },
+        id
     );
 
     async function onEditHandler(classData) {
         await classService.ediClass(id, classData);
-        navigate(Path.ClassDetails.replace(':id', id));
+        navigate(Path.ClassDetails.replace(":id", id));
     }
     return (
         <div className={`col-lg-5 ${styles["edit-form"]}`}>
@@ -138,9 +137,7 @@ const ClassEdit = () => {
                                     type="radio"
                                     name={EditKeys.Gender}
                                     value="male"
-                                    checked={
-                                        values[EditKeys.Gender] === "male"
-                                    }
+                                    checked={values[EditKeys.Gender] === "male"}
                                     onChange={onChange}
                                 />
                                 <label htmlFor="male" className="p-2">
@@ -162,7 +159,6 @@ const ClassEdit = () => {
                                 </label>
                             </div>
                         </div>
-
                         <div className="col-5 p-4">
                             <button
                                 className="btn btn-primary w-100 py-3"

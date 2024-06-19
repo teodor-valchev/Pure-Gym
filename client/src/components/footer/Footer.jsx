@@ -1,6 +1,7 @@
-import { Link } from 'react-router-dom';
-import styles from './Footer.module.css'
+import { Link } from "react-router-dom";
 
+import Path from "../../lib/paths";
+import styles from "./Footer.module.css";
 
 const Footer = () => {
     return (
@@ -19,9 +20,7 @@ const Footer = () => {
                                 </div>
                                 <div className="d-flex mb-2">
                                     <i className="bi bi-envelope-open text-primary me-2" />
-                                    <p className="mb-0">
-                                        teo.valxev@gmail.com{" "}
-                                    </p>
+                                    <p className="mb-0">teo.valxev@gmail.com</p>
                                 </div>
                                 <div className="d-flex mt-4">
                                     <a
@@ -43,33 +42,27 @@ const Footer = () => {
                                     Quick Links
                                 </h4>
                                 <div className="d-flex flex-column justify-content-start">
-                                    <a className="text-secondary mb-2" href="/">
+                                    <Link
+                                        className="text-secondary mb-2"
+                                        to={Path.Home}
+                                    >
                                         <i className="bi bi-arrow-right text-primary me-2" />
                                         Home
-                                    </a>
-                                    <a
+                                    </Link>
+                                    <Link
                                         className="text-secondary mb-2"
-                                        href="/about"
+                                        to={Path.About}
                                     >
                                         <i className="bi bi-arrow-right text-primary me-2" />
                                         About Us
-                                    </a>
-                                    <a className="text-secondary mb-2" href="#">
+                                    </Link>
+                                    <Link
+                                        className="text-secondary mb-2"
+                                        to={Path.Classes}
+                                    >
                                         <i className="bi bi-arrow-right text-primary me-2" />
-                                        Class Schedule
-                                    </a>
-                                    <a className="text-secondary mb-2" href="#">
-                                        <i className="bi bi-arrow-right text-primary me-2" />
-                                        Our Trainers
-                                    </a>
-                                    <a className="text-secondary mb-2" href="#">
-                                        <i className="bi bi-arrow-right text-primary me-2" />
-                                        Latest Blog
-                                    </a>
-                                    <a className="text-secondary" href="#">
-                                        <i className="bi bi-arrow-right text-primary me-2" />
-                                        Contact Us
-                                    </a>
+                                        Classes
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -101,6 +94,6 @@ const Footer = () => {
             </a>
         </div>
     );
-}
+};
 
 export default Footer;

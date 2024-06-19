@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+import Path from "../../lib/paths";
 
 const Home = () => {
     return (
@@ -27,18 +29,12 @@ const Home = () => {
                                 <h1 className="display-2 text-white text-uppercase mb-md-4">
                                     Build Your Body Strong With Pure Gym
                                 </h1>
-                                <a
+                                <Link
                                     className="btn btn-primary py-md-3 px-md-5 me-3"
-                                    href=""
+                                    to={Path.Classes}
                                 >
                                     Join Us
-                                </a>
-                                <a
-                                    className="btn btn-light py-md-3 px-md-5"
-                                    href=""
-                                >
-                                    Contact Us
-                                </a>
+                                </Link>
                             </div>
                         </div>
                     </div>
@@ -61,18 +57,6 @@ const Home = () => {
                                 <h1 className="display-2 text-white text-uppercase mb-md-4">
                                     Grow Your Strength With Our Trainers
                                 </h1>
-                                <a
-                                    className="btn btn-primary py-md-3 px-md-5 me-3"
-                                    href=""
-                                >
-                                    Join Us
-                                </a>
-                                <a
-                                    className="btn btn-light py-md-3 px-md-5"
-                                    href=""
-                                >
-                                    Contact Us
-                                </a>
                             </div>
                         </div>
                     </div>
@@ -104,6 +88,6 @@ const Home = () => {
             </div>
         </div>
     );
-}
+};
 
 export default Home;

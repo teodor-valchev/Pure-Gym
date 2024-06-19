@@ -1,10 +1,12 @@
 import { useContext, useEffect, useState } from "react";
+
 import * as commentService from "../../../services/commentService";
 
-import useForm from "../../hooks/useForm";
+import useForm from "../../../hooks/useForm";
 import CommentItem from "../comment-Item/CommentItem";
-import styles from "./CommentsLists.module.css";
 import { authContext } from "../../../context/authContext";
+
+import styles from "./CommentsLists.module.css";
 
 const CommentKeys = {
     Username: "username",
@@ -12,7 +14,7 @@ const CommentKeys = {
 };
 
 const CommentsLists = () => {
-    const [comments, setComments] = useState([])
+    const [comments, setComments] = useState([]);
     const { isAuthenticated } = useContext(authContext);
 
     const { values, errors, onChange, OnFormSubmit } = useForm(
@@ -24,10 +26,10 @@ const CommentsLists = () => {
     );
 
     const fetchComments = async () => {
-    const data = await commentService.getAllComments()
-    
-    setComments((prevComments) => [...prevComments, ...data]);
-    }  
+        const data = await commentService.getAllComments();
+
+        setComments((prevComments) => [...prevComments, ...data]);
+    };
 
     async function onSubmitCommentsHandler(commentData) {
         const newComment = await commentService.createComment(commentData);
@@ -36,13 +38,15 @@ const CommentsLists = () => {
 
     async function onClickDeleteHandler(comment_id) {
         await commentService.deleteComment(comment_id);
-        setComments((prevComments) => prevComments.filter(c => c._id !== comment_id));
+        setComments((prevComments) =>
+            prevComments.filter((c) => c._id !== comment_id)
+        );
     }
 
     useEffect(() => {
         fetchComments();
-    }, [])
-    
+    }, []);
+
     return (
         <>
             <h3 className="text-uppercase mb-4">{comments.length} Comments</h3>

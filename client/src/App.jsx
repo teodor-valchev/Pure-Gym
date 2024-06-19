@@ -1,20 +1,23 @@
 import { Routes, Route } from "react-router-dom";
 
+import Path from "./lib/paths";
+import AuthProvider from "./context/authContext";
+
 import Navigation from "./components/navigation/Navigation";
 import Home from "./components/home/Home";
 import AboutUs from "./components/about-us/AboutUs";
 
-import Footer from "./components/footer/Footer";
 import Register from "./components/users/register/Register";
-import Path from "./lib/paths";
 import Login from "./components/users/login/Login";
-import AuthProvider from "./context/authContext";
 import Logout from "./components/users/logout/Logout";
-import PageNotFound from "./components/404/404";
+
 import ClassCreate from "./components/classes/class-create/ClassCreate";
 import ClassList from "./components/classes/class-list/ClassList";
 import ClassDetails from "./components/classes/class-detail/ClassDetails";
 import ClassEdit from "./components/classes/class-edit/ClassEdit";
+
+import Footer from "./components/footer/Footer";
+import PageNotFound from "./components/404/404";
 
 function App() {
     return (
@@ -33,7 +36,6 @@ function App() {
                 <Route path={Path.ClassDetails} element={<ClassDetails />}></Route>
                 <Route path={Path.ClassEdit} element={<ClassEdit />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
-
             </Routes>
 
             <Footer />

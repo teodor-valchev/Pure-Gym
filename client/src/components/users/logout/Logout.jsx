@@ -12,11 +12,7 @@ const Logout = () => {
         authService.logout().then(logoutHandler());
     }, []);
 
-    return (
-        <Alert variant="info">
-            Successfully logged out!
-        </Alert>
-    );
+    return <Alert variant="info">Successfully logged out!</Alert>;
 };
 
 export default Logout;

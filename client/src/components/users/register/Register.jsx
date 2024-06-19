@@ -1,11 +1,11 @@
 import { useContext } from "react";
 
 import { authContext } from "../../../context/authContext";
-import useForm from "../../hooks/useForm";
+import useForm from "../../../hooks/useForm";
+import { isEmptyObject } from "../../../utils/helperFunctions";
 
 import Alert from "react-bootstrap/Alert";
 import styles from "./Register.module.css";
-import { isEmptyObject } from "../../../utils/helperFunctions";
 
 const RegisterKeys = {
     Username: "username",
@@ -15,7 +15,7 @@ const RegisterKeys = {
 };
 
 const Register = () => {
-    const {registerSubmitHandler} = useContext(authContext)
+    const { registerSubmitHandler } = useContext(authContext);
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
         registerSubmitHandler,
         {

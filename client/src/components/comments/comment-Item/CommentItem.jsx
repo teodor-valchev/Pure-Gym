@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react";
+
 import { authContext } from "../../../context/authContext";
 import { dateTransform } from "../../../utils/helperFunctions";
 
@@ -29,12 +30,15 @@ const CommentItem = ({
                     src="/img/user.jpg"
                     className="img-fluid rounded"
                     style={{ width: 45, height: 45 }}
+                    alt="profile img"
                 />
                 <div className="ps-3">
                     <h6>
-                        <a href="">{username}</a>
+                        <p>{username}</p>
                         <small>
-                            <i style={{padding: '5px'}}>{date.year}/{date.month}/{date.day}</i>
+                            <i style={{ padding: "5px" }}>
+                                {date.year}/{date.month}/{date.day}
+                            </i>
                         </small>
                     </h6>
                     <p>{comment}</p>

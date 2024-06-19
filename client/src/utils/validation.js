@@ -62,8 +62,8 @@ export const validateClassValues = (inputValues) => {
     if (phoneNumber.length < 10) {
         inputErrors.PhoneNumber = "Phone Number must be at least 10 digits!";
     }
-    if (!image.startsWith("https:\/\/")) {
-        inputErrors.Image = "Image must start with https:\/\/!";
+    if (!image.startsWith("https://")) {
+        inputErrors.Image = "Image must start with https://!";
     }
     if (age <= 0) {
         inputErrors.Age = "Age must be a positive number!";

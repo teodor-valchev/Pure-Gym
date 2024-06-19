@@ -1,8 +1,8 @@
-.owner-container{
+.owner-container {
     display: flex;
     justify-content: space-around;
 }
 
 .delete-button:hover {
-    color: #c9491a
+    color: #c9491a;
 }

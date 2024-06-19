@@ -5,25 +5,24 @@ import * as classService from "../../../services/classService";
 import Path from "../../../lib/paths";
 import { dateTransform } from "../../../utils/helperFunctions";
 
-import styles from './ClassDetails.module.css'
 import { authContext } from "../../../context/authContext";
 import DeleteModal from "../class-delete/ClassDelete";
 import CommentsLists from "../../comments/comments-list/CommentsLists";
+import styles from "./ClassDetails.module.css";
 
 const ClassDetails = () => {
-    const { id } = useParams('id')
-    const {user} = useContext(authContext)
-    const [currentClass, setCurrentClass] = useState({})
-    const [showDeleteModal, setDeleteModal] = useState(false)
+    const { id } = useParams("id");
+    const { user } = useContext(authContext);
+    const [currentClass, setCurrentClass] = useState({});
+    const [showDeleteModal, setDeleteModal] = useState(false);
     const [date, setDate] = useState([]);
-    
+
     useEffect(() => {
-        classService.getSingleClass(id)
-            .then((res) => {
-                setCurrentClass(res)
-                setDate(dateTransform(res._createdOn));
-            });
-    }, [id])
+        classService.getSingleClass(id).then((res) => {
+            setCurrentClass(res);
+            setDate(dateTransform(res._createdOn));
+        });
+    }, [id]);
 
     const handleClose = () => setDeleteModal(false);
     const handleShow = () => setDeleteModal(true);
@@ -38,7 +37,6 @@ const ClassDetails = () => {
                     id={id}
                 />
             )}
-            {/* Hero Start */}
             <div className="container-fluid bg-primary p-5 bg-hero mb-5">
                 <div className="row py-5">
                     <div className="col-12 text-center">
@@ -54,12 +52,9 @@ const ClassDetails = () => {
                     </div>
                 </div>
             </div>
-            {/* Hero End */}
-            {/* Blog Start */}
             <div className="container-fluid p-5">
                 <div className="row g-5">
                     <div className="col-lg-8">
-                        {/* Blog Detail Start */}
                         <div className="mb-5">
                             <img
                                 className="img-fluid w-100 rounded mb-5"
@@ -71,12 +66,9 @@ const ClassDetails = () => {
                             </h1>
                             <p>{currentClass.description}</p>
                         </div>
-                        {/* Blog Detail End */}
-                    <CommentsLists />
+                        <CommentsLists />
                     </div>
-                    {/* Sidebar Start */}
                     <div className="col-lg-4">
-                        {/* Category Start */}
                         <div className="mb-5">
                             <h3 className="text-uppercase mb-4">
                                 Class Details
@@ -101,8 +93,6 @@ const ClassDetails = () => {
                                 </p>
                             </div>
                         </div>
-                        {/* Category End */}
-                        {/* Recent Post Start */}
                         <div className="mb-5">
                             <h3 className="text-uppercase mb-4">
                                 Owner of Class: {currentClass.owner?.username}
@@ -111,7 +101,10 @@ const ClassDetails = () => {
                                 <div className="bg-dark rounded p-3 w-50">
                                     <div className={styles["owner-container"]}>
                                         <Link
-                                            to={Path.ClassEdit.replace(':id',id)}
+                                            to={Path.ClassEdit.replace(
+                                                ":id",
+                                                id
+                                            )}
                                             className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                                         >
                                             Edit
@@ -120,20 +113,19 @@ const ClassDetails = () => {
                                         <button
                                             type="button"
                                             onClick={handleShow}
-                                            className={`d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0 ${styles['delete-button']}`}>
+                                            className={`d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0 ${styles["delete-button"]}`}
+                                        >
                                             Delete
                                         </button>
                                     </div>
                                 </div>
                             )}
                         </div>
-                        {/* Recent Post End */}
                     </div>
-                    {/* Sidebar End */}
                 </div>
             </div>
         </>
     );
-}
+};
 
-export default ClassDetails
+export default ClassDetails;

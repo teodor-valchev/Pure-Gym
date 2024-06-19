@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
+import Path from "../../../lib/paths";
 import * as classService from "../../../services/classService";
 import ClassItem from "../class-item/ClassItem";
-import { Link } from "react-router-dom";
-import Path from "../../../lib/paths";
 
 const ClassList = () => {
     const [classItems, setClassItems] = useState([]);
@@ -84,11 +84,16 @@ const ClassList = () => {
                                 .slice(-3)
                                 .reverse()
                                 .map((recentClasses) => (
-
-                                    <div className="d-flex overflow-hidden mb-3">
+                                    <div
+                                        key={recentClasses._id}
+                                        className="d-flex overflow-hidden mb-3"
+                                    >
                                         <Link
                                             className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
-                                            to={Path.ClassDetails.replace(':id',recentClasses._id)}
+                                            to={Path.ClassDetails.replace(
+                                                ":id",
+                                                recentClasses._id
+                                            )}
                                         >
                                             {recentClasses.title}
                                         </Link>

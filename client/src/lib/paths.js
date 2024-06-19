@@ -10,4 +10,4 @@ const Path = {
     ClassEdit: "/gym/classes/edit/:id",
 };
 
-export default Path
+export default Path;

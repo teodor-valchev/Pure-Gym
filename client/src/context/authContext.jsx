@@ -1,9 +1,9 @@
-import { createContext, useState } from "react";
+import { createContext } from "react";
 import { useNavigate } from "react-router-dom";
 
 import * as authService from "../services/authService";
 import Path from "../lib/paths";
-import useUserState from "../components/hooks/useUserState";
+import useUserState from "../hooks/useUserState";
 
 export const authContext = createContext();
 
@@ -11,7 +11,7 @@ authContext.displayName = "Auth Context";
 
 const AuthProvider = ({ children }) => {
     const [auth, setAuth] = useUserState("user", {});
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     async function loginSubmitHandler(userData) {
         const user = await authService.login(userData);
@@ -24,11 +24,11 @@ const AuthProvider = ({ children }) => {
         const user = await authService.register(userData);
 
         setAuth(user);
-        navigate(Path.Classes)
+        navigate(Path.Classes);
     }
 
     function logoutHandler() {
-        setAuth('');
+        setAuth("");
         navigate(Path.Home);
     }
 

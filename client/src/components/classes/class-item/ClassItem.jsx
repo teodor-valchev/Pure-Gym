@@ -26,7 +26,7 @@ const ClassItem = ({ _createdOn, image, title, _id }) => {
                     </div>
                     <Link
                         className="h5 text-uppercase text-light"
-                        to={Path.ClassDetails.replace(':id',_id)}
+                        to={Path.ClassDetails.replace(":id", _id)}
                     >
                         {title}
                     </Link>

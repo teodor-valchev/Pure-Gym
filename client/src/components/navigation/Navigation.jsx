@@ -2,8 +2,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 import { authContext } from "../../context/authContext";
-import styles from "./Navigation.module.css";
 import Path from "../../lib/paths";
+import styles from "./Navigation.module.css";
 
 const Navigation = () => {
     const { isAuthenticated, user } = useContext(authContext);
@@ -26,14 +26,14 @@ const Navigation = () => {
         <div className="container-fluid bg-dark px-0">
             <div className="row gx-0">
                 <div className="col-lg-3 bg-dark d-none d-lg-block">
-                    <a
+                    <Link
                         className="navbar-brand w-100 h-100 m-0 p-0 d-flex align-items-center justify-content-center"
-                        href="index.html"
+                        to={Path.Home}
                     >
                         <h1 className="m-0 display-4 text-primary text-uppercase">
                             Pure Gym
                         </h1>
-                    </a>
+                    </Link>
                 </div>
                 <div className="col-lg-9">
                     <div className="row gx-0 bg-secondary d-none d-lg-flex">
@@ -103,8 +103,7 @@ const Navigation = () => {
                                             onClick={onLinkChangeHandler}
                                             className={`nav-item nav-link 
                                                 ${
-                                                    linkClass.Create &&
-                                                    "active"
+                                                    linkClass.Create && "active"
                                                 }`}
                                             data-link="Create"
                                             to={Path["Class_Create"]}
