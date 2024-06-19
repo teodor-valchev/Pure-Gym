@@ -3,7 +3,7 @@
     align-items: center;
     justify-content: center;
     width: 50rem;
-    height: 25%;
+    height: auto;
 }
 
 .form-width {

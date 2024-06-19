@@ -49,15 +49,19 @@ const CommentsLists = () => {
 
     return (
         <>
-            <h3 className="text-uppercase mb-4">{comments.length} Comments</h3>
-            {comments.map((comment) => (
-                <CommentItem
-                    key={comment._id}
-                    {...comment}
-                    onClickDeleteHandler={onClickDeleteHandler}
-                    comment_id={comment._id}
-                />
-            ))}
+            <h3 className="text-uppercase mb-4">Comments</h3>
+            {comments && comments.length > 0 ? (
+                comments.map((comment) => (
+                    <CommentItem
+                        key={comment._id}
+                        {...comment}
+                        onClickDeleteHandler={onClickDeleteHandler}
+                        comment_id={comment._id}
+                    />
+                ))
+            ) : (
+                <p className="text-uppercase mb-4">No comments available...</p>
+            )}
 
             {isAuthenticated && (
                 <div
