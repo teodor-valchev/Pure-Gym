@@ -9,9 +9,7 @@ const Logout = () => {
     const { logoutHandler } = useContext(authContext);
 
     useEffect(() => {
-        authService.logout().then((res) => {
-            logoutHandler();
-        });
+        authService.logout().then(logoutHandler());
     }, []);
 
     return (
