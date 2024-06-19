@@ -8,10 +8,6 @@ const CommentItem = ({ comment, username, _id, _ownerId }) => {
     async function onClickDeleteHandler() {
         await commentService.deleteComment(_id);
     }
-
-    console.log(user._id);
-
-    console.log(_ownerId);
     return (
         <div className="mb-3">
             <div className="d-flex mb-4">
@@ -22,7 +18,7 @@ const CommentItem = ({ comment, username, _id, _ownerId }) => {
                 />
                 <div className="ps-3">
                     <h6>
-                        <a href="">{username}</a>{" "}
+                        <a href="">{username}</a>
                         <small>
                             <i>01 Jan 2045</i>
                         </small>

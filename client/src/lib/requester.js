@@ -1,6 +1,7 @@
 import Path from "./paths";
 import { isEmptyObject } from "../utils/helperFunctions";
 import {
+    commentsValidation,
     validateClassValues,
     validateUserLoginValues,
     validateUserRegisterValues,
@@ -53,6 +54,16 @@ const buildOptions = (data, url, method) => {
         return responseBuilder;
     } else if (url.includes(id) && method === "PUT") {
         const errors = validateClassValues(data);
+        if (!isEmptyObject(errors)) {
+            responseBuilder.status = 400;
+            responseBuilder.body = JSON.stringify(errors);
+            return responseBuilder;
+        }
+        responseBuilder.body = JSON.stringify(data);
+
+        return responseBuilder;
+    } else if (url.endsWith('/comments') && method === "POST") {
+        const errors = commentsValidation(data);
         if (!isEmptyObject(errors)) {
             responseBuilder.status = 400;
             responseBuilder.body = JSON.stringify(errors);

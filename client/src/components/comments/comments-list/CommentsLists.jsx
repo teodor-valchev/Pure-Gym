@@ -30,11 +30,9 @@ const CommentsLists = () => {
     }  
 
     async function onSubmitCommentsHandler(commentData) {
-        const newCommnet = await commentService.createComment(commentData);
-        setComments((prevComments) => [...prevComments, newCommnet]);
+        const newComment = await commentService.createComment(commentData);
+        setComments((prevComments) => [...prevComments, newComment]);
     }
-
-    console.log(comments);
 
     useEffect(() => {
         fetchComments();
@@ -57,6 +55,11 @@ const CommentsLists = () => {
                     >
                         <div className="row g-3 pt-2 mb-5">
                             <div className="col-12">
+                                {errors.AllFieldsRequired && (
+                                    <p className={styles.error}>
+                                        {errors.AllFieldsRequired}
+                                    </p>
+                                )}
                                 <input
                                     type="text"
                                     name={CommentKeys.Username}
@@ -67,6 +70,11 @@ const CommentsLists = () => {
                                 />
                             </div>
                             <div className="col-12">
+                                {errors.AllFieldsRequired && (
+                                    <p className={styles.error}>
+                                        {errors.AllFieldsRequired}
+                                    </p>
+                                )}
                                 <textarea
                                     className="form-control bg-white border-0"
                                     rows={5}

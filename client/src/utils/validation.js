@@ -71,3 +71,15 @@ export const validateClassValues = (inputValues) => {
 
     return inputErrors;
 };
+
+export const commentsValidation = (inputValues) => {
+    let inputErrors = {};
+
+    const username = inputValues.username;
+    const comment = inputValues.comment;
+
+    if (!isAllFieldsRequired(username, comment)) {
+        inputErrors.AllFieldsRequired = "All fields are required!";
+    }
+    return inputErrors;
+};
