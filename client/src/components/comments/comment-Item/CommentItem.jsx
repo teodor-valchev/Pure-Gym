@@ -1,13 +1,20 @@
 import { useContext } from "react";
 import { authContext } from "../../../context/authContext";
-import * as commentService from "../../../services/commentService";
 
-const CommentItem = ({ comment, username, _id, _ownerId }) => {
+const CommentItem = ({
+    comment,
+    username,
+    _ownerId,
+    onClickDeleteHandler,
+    comment_id,
+}) => {
     const { user } = useContext(authContext);
 
-    async function onClickDeleteHandler() {
-        await commentService.deleteComment(_id);
+    function onCommentHandler(e) {
+        const commentId = e.currentTarget.getAttribute("data-commentid");
+        onClickDeleteHandler(commentId);
     }
+
     return (
         <div className="mb-3">
             <div className="d-flex mb-4">
@@ -25,7 +32,12 @@ const CommentItem = ({ comment, username, _id, _ownerId }) => {
                     </h6>
                     <p>{comment}</p>
                     {user?._id === _ownerId && (
-                        <button onClick={onClickDeleteHandler}  className="btn btn-sm btn-secondary">
+                        <button
+                            onClick={onCommentHandler}
+                            className="btn btn-sm btn-secondary"
+                            data-commentid={`${comment_id}`}
+
+                        >
                             Delete
                         </button>
                     )}

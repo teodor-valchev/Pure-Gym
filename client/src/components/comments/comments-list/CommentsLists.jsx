@@ -14,8 +14,8 @@ const CommentKeys = {
 const CommentsLists = () => {
     const [comments, setComments] = useState([])
     const { isAuthenticated } = useContext(authContext);
-    //validations
-    const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
+
+    const { values, errors, onChange, OnFormSubmit } = useForm(
         onSubmitCommentsHandler,
         {
             [CommentKeys.Username]: "",
@@ -34,6 +34,11 @@ const CommentsLists = () => {
         setComments((prevComments) => [...prevComments, newComment]);
     }
 
+    async function onClickDeleteHandler(comment_id) {
+        await commentService.deleteComment(comment_id);
+        setComments((prevComments) => prevComments.filter(c => c._id !== comment_id));
+    }
+
     useEffect(() => {
         fetchComments();
     }, [])
@@ -42,7 +47,12 @@ const CommentsLists = () => {
         <>
             <h3 className="text-uppercase mb-4">{comments.length} Comments</h3>
             {comments.map((comment) => (
-                <CommentItem key={comment._id} {...comment} />
+                <CommentItem
+                    key={comment._id}
+                    {...comment}
+                    onClickDeleteHandler={onClickDeleteHandler}
+                    comment_id={comment._id}
+                />
             ))}
 
             {isAuthenticated && (
