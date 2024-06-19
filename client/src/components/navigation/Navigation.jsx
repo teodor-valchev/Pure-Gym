@@ -13,11 +13,11 @@ const Navigation = () => {
         Register: false,
         Login: false,
         Classes: false,
-        CreateClass: false,
+        Create: false,
     });
 
     const onLinkChangeHandler = (e) => {
-        const linkName = e.target.textContent;
+        const linkName = e.target.dataset.link;
 
         setLinkClass(() => ({ [linkName]: true }));
     };
@@ -67,6 +67,7 @@ const Navigation = () => {
                         <div className="navbar-collapse" id="navbarCollapse">
                             <div className="navbar-nav mr-auto py-0">
                                 <Link
+                                    data-link="Home"
                                     onClick={onLinkChangeHandler}
                                     className={`nav-item nav-link ${
                                         linkClass.Home && "active"
@@ -80,6 +81,7 @@ const Navigation = () => {
                                     className={`nav-item nav-link ${
                                         linkClass.About && "active"
                                     }`}
+                                    data-link="About"
                                     to={Path.About}
                                 >
                                     About
@@ -89,6 +91,7 @@ const Navigation = () => {
                                     className={`nav-item nav-link ${
                                         linkClass.Classes && "active"
                                     }`}
+                                    data-link="Classes"
                                     to={Path.Classes}
                                 >
                                     Classes
@@ -100,16 +103,18 @@ const Navigation = () => {
                                             onClick={onLinkChangeHandler}
                                             className={`nav-item nav-link 
                                                 ${
-                                                linkClass.CreateClass &&
-                                                "active"
-                                            }`}
-                                            to={Path['Class_Create']}
+                                                    linkClass.Create &&
+                                                    "active"
+                                                }`}
+                                            data-link="Create"
+                                            to={Path["Class_Create"]}
                                         >
                                             Create Class
                                         </Link>
                                         <Link
                                             className="nav-item nav-link"
                                             to={Path.Logout}
+                                            data-link="Logout"
                                         >
                                             Logout
                                         </Link>
@@ -121,6 +126,7 @@ const Navigation = () => {
                                             className={`nav-item nav-link ${
                                                 linkClass.Register && "active"
                                             }`}
+                                            data-link="Register"
                                             to={Path.Register}
                                         >
                                             Register
@@ -130,6 +136,7 @@ const Navigation = () => {
                                             className={`nav-item nav-link ${
                                                 linkClass.Login && "active"
                                             }`}
+                                            data-link="Login"
                                             to={Path.Login}
                                         >
                                             Login
