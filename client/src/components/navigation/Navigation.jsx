@@ -93,12 +93,6 @@ const Navigation = () => {
                                 >
                                     Classes
                                 </Link>
-                                <a
-                                    className="nav-item nav-link"
-                                    href="team.html"
-                                >
-                                    Trainers
-                                </a>
 
                                 {isAuthenticated ? (
                                     <div className={styles.user}>
