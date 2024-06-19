@@ -32,7 +32,6 @@ const AuthProvider = ({ children }) => {
         navigate(Path.Home);
     }
 
-    console.log(auth);
     const values = {
         user: auth,
         isAuthenticated: auth.accessToken,

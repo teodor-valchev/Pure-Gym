@@ -2,6 +2,7 @@ import { Routes, Route } from "react-router-dom";
 
 import Path from "./lib/paths";
 import AuthProvider from "./context/authContext";
+import AuthGuard from "./guards/AuthGuards";
 
 import Navigation from "./components/navigation/Navigation";
 import Home from "./components/home/Home";
@@ -19,6 +20,7 @@ import ClassEdit from "./components/classes/class-edit/ClassEdit";
 import Footer from "./components/footer/Footer";
 import PageNotFound from "./components/404/404";
 
+
 function App() {
     return (
         <AuthProvider>
@@ -29,12 +31,15 @@ function App() {
 
                 <Route path={Path.Register} element={<Register />}></Route>
                 <Route path={Path.Login} element={<Login />}></Route>
-                <Route path={Path.Logout} element={<Logout />}></Route>
+
+                <Route element={<AuthGuard />}>
+                    <Route path={Path.Logout} element={<Logout />}></Route>
+                    <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
+                    <Route path={Path.ClassEdit} element={<ClassEdit />}></Route>
+                </Route>
 
                 <Route path={Path.Classes} element={<ClassList />}></Route>
-                <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
                 <Route path={Path.ClassDetails} element={<ClassDetails />}></Route>
-                <Route path={Path.ClassEdit} element={<ClassEdit />}></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
             </Routes>
 
