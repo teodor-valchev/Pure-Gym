@@ -13,3 +13,9 @@ export const getAllComments = async () => {
 
     return result
 };
+
+export const deleteComment = async (id) => {
+    const result = await request.remove(`${BASE_URL}/${id}`,);
+
+    return result;
+};

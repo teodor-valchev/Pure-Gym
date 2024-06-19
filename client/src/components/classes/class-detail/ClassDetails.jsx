@@ -25,10 +25,6 @@ const ClassDetails = () => {
             });
     }, [id])
 
-    console.log(date);
-
-    console.log(user);
-
     const handleClose = () => setDeleteModal(false);
     const handleShow = () => setDeleteModal(true);
 
