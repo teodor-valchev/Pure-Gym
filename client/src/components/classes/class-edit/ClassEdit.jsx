@@ -19,7 +19,7 @@ const EditKeys = {
 
 const ClassEdit = () => {
     const navigate = useNavigate();
-    const { id } = useParams("id");
+    const { classId } = useParams("classId");
 
     const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
         onEditHandler,
@@ -31,12 +31,12 @@ const ClassEdit = () => {
             [EditKeys.Image]: "",
             [EditKeys.Gender]: "male",
         },
-        id
+        classId
     );
 
     async function onEditHandler(classData) {
-        await classService.ediClass(id, classData);
-        navigate(Path.ClassDetails.replace(":id", id));
+        await classService.ediClass(classId, classData);
+        navigate(Path.ClassDetails.replace(":classId", classId));
     }
     return (
         <div className={`col-lg-5 ${styles["edit-form"]}`}>

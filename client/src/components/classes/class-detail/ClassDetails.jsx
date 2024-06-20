@@ -11,18 +11,18 @@ import CommentsLists from "../../comments/comments-list/CommentsLists";
 import styles from "./ClassDetails.module.css";
 
 const ClassDetails = () => {
-    const { id } = useParams("id");
+    const { classId } = useParams("classId");
     const { user } = useContext(authContext);
     const [currentClass, setCurrentClass] = useState({});
     const [showDeleteModal, setDeleteModal] = useState(false);
     const [date, setDate] = useState([]);
 
     useEffect(() => {
-        classService.getSingleClass(id).then((res) => {
+        classService.getSingleClass(classId).then((res) => {
             setCurrentClass(res);
             setDate(dateTransform(res._createdOn));
         });
-    }, [id]);
+    }, [classId]);
 
     const handleClose = () => setDeleteModal(false);
     const handleShow = () => setDeleteModal(true);
@@ -34,7 +34,7 @@ const ClassDetails = () => {
                     handleClose={handleClose}
                     handleShow={handleShow}
                     title={currentClass.title}
-                    id={id}
+                    classId={classId}
                 />
             )}
             <div className="container-fluid bg-primary p-5 bg-hero mb-5">
@@ -66,7 +66,7 @@ const ClassDetails = () => {
                             </h1>
                             <p>{currentClass.description}</p>
                         </div>
-                        <CommentsLists />
+                        <CommentsLists classId={classId} />
                     </div>
                     <div className="col-lg-4">
                         <div className="mb-5">
@@ -102,8 +102,8 @@ const ClassDetails = () => {
                                     <div className={styles["owner-container"]}>
                                         <Link
                                             to={Path.ClassEdit.replace(
-                                                ":id",
-                                                id
+                                                ":classId",
+                                                classId
                                             )}
                                             className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                                         >

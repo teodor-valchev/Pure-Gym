@@ -15,14 +15,10 @@ export const getAllClasses = async () => {
 };
 
 export const getSingleClass = async (id) => {
-    const query = new URLSearchParams({
-        where: `_id="${id}"`,
-        load: `owner=_ownerId:users`,
-    });
 
-    const result = await request.get(`${BASE_URL}?${query.toString()}`);
+    const result = await request.get(`${BASE_URL}/${id}`);
 
-    return result[0];
+    return result;
 };
 
 export const deleteClass = async (id) => {

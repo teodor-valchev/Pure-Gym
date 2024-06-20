@@ -13,9 +13,17 @@ const CommentKeys = {
     Comment: "comment",
 };
 
-const CommentsLists = () => {
+const CommentsLists = ({
+    classId
+}) => {
     const [comments, setComments] = useState([]);
     const { isAuthenticated } = useContext(authContext);
+
+        useEffect(() => {
+            commentService
+                .getAllComments(classId)
+                .then((data) => setComments(data));
+        }, [classId]);
 
     const { values, errors, onChange, OnFormSubmit } = useForm(
         onSubmitCommentsHandler,
@@ -25,27 +33,21 @@ const CommentsLists = () => {
         }
     );
 
-    const fetchComments = async () => {
-        const data = await commentService.getAllComments();
-
-        setComments((prevComments) => [...prevComments, ...data]);
-    };
-
     async function onSubmitCommentsHandler(commentData) {
-        const newComment = await commentService.createComment(commentData);
+        const newComment = await commentService.createComment(classId,commentData);
         setComments((prevComments) => [...prevComments, newComment]);
     }
 
+    console.log(comments);
+
     async function onClickDeleteHandler(comment_id) {
         await commentService.deleteComment(comment_id);
-        setComments((prevComments) =>
-            prevComments.filter((c) => c._id !== comment_id)
-        );
+        // setComments((prevComments) =>
+        //     prevComments.filter((c) => c._id !== comment_id)
+        // );
     }
 
-    useEffect(() => {
-        fetchComments();
-    }, []);
+
 
     return (
         <>

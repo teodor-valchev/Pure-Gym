@@ -5,11 +5,11 @@ import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 
-const DeleteModal = ({ handleClose, handleShow, title, id }) => {
+const DeleteModal = ({ handleClose, handleShow, title, classId }) => {
     const navigate = useNavigate();
 
     async function onDeleteHandler() {
-        await classService.deleteClass(id);
+        await classService.deleteClass(classId);
         navigate(Path.Classes);
     }
     return (

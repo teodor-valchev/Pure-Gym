@@ -36,7 +36,7 @@ const ClassList = () => {
                                         <Link
                                             className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
                                             to={Path.ClassDetails.replace(
-                                                ":id",
+                                                ":classId",
                                                 recentClasses._id
                                             )}
                                         >
