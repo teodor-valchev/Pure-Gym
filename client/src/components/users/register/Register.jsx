@@ -39,7 +39,7 @@ const Register = () => {
                     </Alert>
                 )}
 
-                <form className="bg-dark h-auto" onSubmit={OnFormSubmit}>
+                <form className={`bg-dark h-auto ${styles['form-resp']}`} onSubmit={OnFormSubmit}>
                     <h2 className="d-flex text-light justify-content-center pt-3 ">
                         Register
                     </h2>

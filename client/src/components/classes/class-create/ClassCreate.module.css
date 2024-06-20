@@ -40,11 +40,27 @@ form {
 }
 
 .msg {
-    position: relative;
-    bottom: 25rem;
-    left: 66rem;
+    position: absolute;
+    top: 0;
+    z-index: 3;
+    right: 1px;
 }
 
 textarea {
     height: 8rem;
+}
+
+@media (max-width: 768px) {
+    .form-resp {
+        width: -webkit-fill-available;
+    }
+
+    .error {
+        font-size: 16px;
+    }
+
+    .msg {
+        text-align: center;
+        font-size: 10px;
+    }
 }

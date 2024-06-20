@@ -42,16 +42,19 @@ const ClassEdit = () => {
         <div className={`col-lg-5 ${styles["edit-form"]}`}>
             <div className={styles["background-image"]}></div>
             <div className={`${styles["edit-form"]}`}>
-                { errors.AllFieldsRequired &&
+                {errors.AllFieldsRequired && (
                     <Alert
                         className={styles.msg}
                         variant={`${!isEmptyObject(errors) && "danger"}`}
                     >
                         {errors.AllFieldsRequired}
                     </Alert>
-                }
+                )}
 
-                <form className="bg-dark h-auto" onSubmit={OnFormSubmit}>
+                <form
+                    className={`bg-dark h-auto ${styles["form-resp"]}`}
+                    onSubmit={OnFormSubmit}
+                >
                     <h2 className="d-flex text-light justify-content-center pt-3 ">
                         Edit Class
                     </h2>

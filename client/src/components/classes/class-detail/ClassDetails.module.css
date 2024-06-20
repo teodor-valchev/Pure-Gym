@@ -6,3 +6,21 @@
 .delete-button:hover {
     color: #c9491a;
 }
+.owner-container {
+    width: 67%;
+}
+
+.description {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    overflow: hidden;
+}
+
+@media (max-width: 768px) {
+    .owner-container {
+        width: 100%;
+    }
+}

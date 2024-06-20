@@ -39,20 +39,19 @@ const ClassCreate = () => {
         <div className={`col-lg-5 ${styles["create-form"]}`}>
             <div className={styles["background-image"]}></div>
             <div className={`${styles["create-form"]}`}>
-                {isEmptyObject(errors) && submitting ? (
-                    <Alert className={styles.msg} variant="success">
-                        Successfully created a new Class!
-                    </Alert>
-                ) : (
-                    <Alert
-                        className={styles.msg}
-                        variant={`${!isEmptyObject(errors) && "danger"}`}
-                    >
-                        {errors.AllFieldsRequired}
-                    </Alert>
+                {errors.AllFieldsRequired && (
+                        <Alert
+                            className={styles.msg}
+                            variant={`${!isEmptyObject(errors) && "danger"}`}
+                        >
+                            {errors.AllFieldsRequired}
+                        </Alert>
                 )}
 
-                <form className="bg-dark h-auto" onSubmit={OnFormSubmit}>
+                <form
+                    className={`bg-dark h-auto ${styles["form-resp"]}`}
+                    onSubmit={OnFormSubmit}
+                >
                     <h2 className="d-flex text-light justify-content-center pt-3 ">
                         Create Class
                     </h2>

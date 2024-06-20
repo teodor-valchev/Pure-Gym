@@ -64,7 +64,9 @@ const ClassDetails = () => {
                             <h1 className="text-uppercase mb-4">
                                 {currentClass.title}
                             </h1>
-                            <p>{currentClass.description}</p>
+                            <p className={styles.description}>
+                                {currentClass.description}
+                            </p>
                         </div>
                         <CommentsLists classId={classId} />
                     </div>
@@ -98,7 +100,9 @@ const ClassDetails = () => {
                                 Class Owner: {currentClass.author?.username}
                             </h3>
                             {currentClass._ownerId === user._id && (
-                                <div className="bg-dark rounded p-3 w-50">
+                                <div
+                                    className={`bg-dark rounded p-3 ${styles["owner-container"]}`}
+                                >
                                     <div className={styles["owner-container"]}>
                                         <Link
                                             to={Path.ClassEdit.replace(

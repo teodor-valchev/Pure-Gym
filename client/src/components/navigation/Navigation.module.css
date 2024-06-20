@@ -1,3 +1,10 @@
 .user {
     display: flex;
 }
+
+
+@media (max-width: 768px) {
+    .user {
+        flex-direction: column;
+    }
+}
