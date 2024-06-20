@@ -6,7 +6,7 @@ import useForm from "../../../hooks/useForm";
 import * as classService from "../../../services/classService";
 
 import Alert from "react-bootstrap/Alert";
-import styles from "./class-create.module.css";
+import styles from "./ClassCreate.module.css";
 
 const CreateKeys = {
     Title: "title",
@@ -76,7 +76,7 @@ const ClassCreate = () => {
                                     {errors.Description}
                                 </p>
                             )}
-                            <input
+                            <textarea
                                 type="text"
                                 className="form-control bg-light border-0 px-4"
                                 name={CreateKeys.Description}

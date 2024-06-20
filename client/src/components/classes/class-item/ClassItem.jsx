@@ -14,7 +14,7 @@ const ClassItem = ({ _createdOn, image, title, _id }) => {
         <div className="col-md-6">
             <div className="blog-item">
                 <div className="position-relative overflow-hidden rounded-top">
-                    <img alt="" className="img-fluid" src={image} />
+                    <img alt="photo" className="img-fluid" src={image} style={{width: '31rem'}} />
                 </div>
                 <div className="bg-dark d-flex align-items-center rounded-bottom p-4">
                     <div className="flex-shrink-0 text-center text-secondary border-end border-secondary pe-3 me-3">

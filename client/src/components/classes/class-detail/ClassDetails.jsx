@@ -57,7 +57,7 @@ const ClassDetails = () => {
                     <div className="col-lg-8">
                         <div className="mb-5">
                             <img
-                                className="img-fluid w-100 rounded mb-5"
+                                className="img-fluid w-80 rounded mb-2"
                                 src={currentClass.image}
                                 alt=""
                             />

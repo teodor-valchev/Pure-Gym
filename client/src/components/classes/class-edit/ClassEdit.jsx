@@ -79,7 +79,7 @@ const ClassEdit = () => {
                                     {errors.Description}
                                 </p>
                             )}
-                            <input
+                            <textarea
                                 type="text"
                                 className="form-control bg-light border-0 px-4"
                                 name={EditKeys.Description}

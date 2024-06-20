@@ -44,3 +44,7 @@ form {
     bottom: 25rem;
     left: 66rem;
 }
+
+textarea {
+    height: 8rem;
+}
