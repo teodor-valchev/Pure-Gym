@@ -4,15 +4,22 @@ import { Link } from "react-router-dom";
 import Path from "../../../lib/paths";
 import * as classService from "../../../services/classService";
 import ClassItem from "../class-item/ClassItem";
+import LoadingSpinner from "../../loading-spinner/LoadingSpinner";
 
 const ClassList = () => {
     const [classItems, setClassItems] = useState([]);
+    const [showSpinner, setShowSpinner] = useState(true);
 
     useEffect(() => {
-        classService.getAllClasses().then((res) => setClassItems(res));
+        classService.getAllClasses()
+            .then((res) => {
+                setClassItems(res)
+                
+            }).finally(() => setShowSpinner(false));
     }, []);
     return (
         <div className="container-fluid p-5">
+            {showSpinner && <LoadingSpinner /> }
             <div className="row g-5">
                 <div className="col-lg-8">
                     <div className="row g-5">
