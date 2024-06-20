@@ -42,9 +42,9 @@ const CommentsLists = ({
 
     async function onClickDeleteHandler(comment_id) {
         await commentService.deleteComment(comment_id);
-        // setComments((prevComments) =>
-        //     prevComments.filter((c) => c._id !== comment_id)
-        // );
+        setComments((prevComments) =>
+            prevComments.filter((c) => c._id !== comment_id)
+        );
     }
 
 
