@@ -38,15 +38,12 @@ const CommentsLists = ({
         setComments((prevComments) => [...prevComments, newComment]);
     }
 
-    console.log(comments);
-
     async function onClickDeleteHandler(comment_id) {
         await commentService.deleteComment(comment_id);
         setComments((prevComments) =>
             prevComments.filter((c) => c._id !== comment_id)
         );
     }
-
 
 
     return (
@@ -62,7 +59,7 @@ const CommentsLists = ({
                     />
                 ))
             ) : (
-                <p className="text-uppercase mb-4">No comments available...</p>
+                <p className="text-uppercase mb-4">No comments yet...</p>
             )}
 
             {isAuthenticated && (

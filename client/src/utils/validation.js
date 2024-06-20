@@ -62,6 +62,9 @@ export const validateClassValues = (inputValues) => {
     if (phoneNumber.length < 10) {
         inputErrors.PhoneNumber = "Phone Number must be at least 10 digits!";
     }
+    if (isNaN(phoneNumber)) {
+        inputErrors.PhoneNumber = "Phone Number must consists of digits only";
+    }
     if (!image.startsWith("https://")) {
         inputErrors.Image = "Image must start with https://!";
     }
