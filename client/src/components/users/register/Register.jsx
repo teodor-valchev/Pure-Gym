@@ -30,16 +30,12 @@ const Register = () => {
         <div className={`col-lg-5 ${styles["register-form"]}`}>
             <div className={styles["background-image"]}></div>
             <div className={`${styles["register-form"]}`}>
-                {isEmptyObject(errors) && submitting ? (
-                    <Alert className={styles.msg} variant="success">
-                        Registration is successful!
-                    </Alert>
-                ) : (
+                {errors.userAlreadyExists && (
                     <Alert
                         className={styles.msg}
                         variant={`${!isEmptyObject(errors) && "danger"}`}
                     >
-                        {errors.AllFieldsRequired}
+                        {errors.userAlreadyExists}
                     </Alert>
                 )}
 

@@ -25,18 +25,14 @@ const Login = () => {
         <div className={`col-lg-5 ${styles["login-form"]}`}>
             <div className={styles["background-image"]}></div>
             <div className={`${styles["login-form"]}`}>
-                {Object.keys(errors).length === 0 && submitting ? (
-                    <Alert className={styles["success-msg"]} variant="success">
-                        Login is successful!
-                    </Alert>
-                ) : (
+                {errors.invalidAccessToken && 
                     <Alert
                         className={styles.msg}
                         variant={`${!isEmptyObject(errors) && "danger"}`}
                     >
                         {errors.invalidAccessToken}
                     </Alert>
-                )}
+                }
 
                 <form className="bg-dark h-auto" onSubmit={OnFormSubmit}>
                     <h2 className="d-flex text-light justify-content-center pt-3 ">

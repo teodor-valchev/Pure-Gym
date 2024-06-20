@@ -94,10 +94,11 @@ const request = async (method, url, data) => {
 
     if (result.status === 204) {
         return result;
-    } else if (result.status === 403) {
+    } else if (result.status === 403 || result.status === 409) {
         //throwing service errors
         const serviceError = {
             invalidAccessToken: "User doesn't exist",
+            userAlreadyExists: "A user with the same email already exists!",
         };
         throw serviceError;
     }

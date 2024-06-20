@@ -16,6 +16,7 @@ const AuthProvider = ({ children }) => {
     async function loginSubmitHandler(userData) {
         const user = await authService.login(userData);
 
+        alert('Successfully logged in!')
         setAuth(user);
         navigate(Path.Classes);
     }
@@ -23,11 +24,13 @@ const AuthProvider = ({ children }) => {
     async function registerSubmitHandler(userData) {
         const user = await authService.register(userData);
 
+        alert("Registration was successful!");
         setAuth(user);
         navigate(Path.Classes);
     }
 
     function logoutHandler() {
+        alert("Successfully logged out!");
         setAuth("");
         navigate(Path.Home);
     }

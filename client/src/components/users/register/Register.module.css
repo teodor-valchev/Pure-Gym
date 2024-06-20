@@ -40,7 +40,7 @@ form {
 }
 
 .msg {
-    position: relative;
-    bottom: 25rem;
-    left: 66rem;
+    position: absolute;
+    top: 0;
+    z-index: 3;
 }

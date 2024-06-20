@@ -54,7 +54,7 @@ const AboutUs = () => {
                                 id="pills-1"
                             >
                                 <p className="text-secondary mb-0">
-                                    Welcome to Gymster, where your fitness
+                                    Welcome to Pure Gym, where your fitness
                                     journey begins! We are dedicated to
                                     providing top-notch gym services designed to
                                     help you achieve your health and fitness
