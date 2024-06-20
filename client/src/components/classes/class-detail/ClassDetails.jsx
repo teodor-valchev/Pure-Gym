@@ -95,7 +95,7 @@ const ClassDetails = () => {
                         </div>
                         <div className="mb-5">
                             <h3 className="text-uppercase mb-4">
-                                Owner of Class: {currentClass.owner?.username}
+                                Class Owner: {currentClass.author?.username}
                             </h3>
                             {currentClass._ownerId === user._id && (
                                 <div className="bg-dark rounded p-3 w-50">
