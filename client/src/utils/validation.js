@@ -1,7 +1,9 @@
-import { isAllFieldsRequired } from "./helperFunctions";
+import { isAllFieldsRequired, trimWhiteSpaces } from "./helperFunctions";
 
 export const validateUserRegisterValues = (inputValues) => {
     let inputErrors = {};
+
+    inputValues = trimWhiteSpaces(inputValues);
 
     const username = inputValues.username;
     const email = inputValues.email;
@@ -31,6 +33,8 @@ export const validateUserRegisterValues = (inputValues) => {
 export const validateUserLoginValues = (inputValues) => {
     let inputErrors = {};
 
+    inputValues = trimWhiteSpaces(inputValues);
+
     const email = inputValues.email;
     const password = inputValues.password;
 
@@ -43,11 +47,13 @@ export const validateUserLoginValues = (inputValues) => {
 export const validateClassValues = (inputValues) => {
     let inputErrors = {};
 
-    const title = inputValues.title;
-    const description = inputValues.description;
-    const phoneNumber = inputValues["phone-number"];
-    const age = inputValues.age;
-    const image = inputValues.image;
+    inputValues = trimWhiteSpaces(inputValues);
+
+    const title = inputValues.title
+    const description = inputValues.description
+    const phoneNumber = inputValues["phone-number"]
+    const age = inputValues.age
+    const image = inputValues.image
 
     if (!isAllFieldsRequired(title, description, phoneNumber, age, image)) {
         inputErrors.AllFieldsRequired = "All fields are required!";
@@ -77,6 +83,8 @@ export const validateClassValues = (inputValues) => {
 
 export const commentsValidation = (inputValues) => {
     let inputErrors = {};
+
+    inputValues = trimWhiteSpaces(inputValues);
 
     const username = inputValues.username;
     const comment = inputValues.comment;

@@ -1,0 +1,30 @@
+.no-classes-message {
+    font-size: 1.5em;
+    color: #ff6347; /* Tomato color */
+    background: linear-gradient(
+        90deg,
+        rgba(255, 99, 71, 0.1) 0%,
+        rgba(255, 255, 255, 0.1) 100%
+    );
+    border: 2px dashed #ff6347;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    margin: 10rem 39rem 20rem;
+    width: 80%;
+    max-width: 600px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.no-classes-message:hover {
+    background: rgba(255, 99, 71, 0.2);
+    transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+    .no-classes-message {
+        width: -webkit-fill-available;
+        margin: 10%
+    }
+}

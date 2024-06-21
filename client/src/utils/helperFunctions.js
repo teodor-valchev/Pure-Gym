@@ -18,3 +18,16 @@ export const dateTransform = (timestamp) => {
 
     return formattedData;
 };
+
+export const trimWhiteSpaces = (inputValues) => {
+    const trimmedValues = {};
+
+    Object.keys(inputValues).forEach((key) => {
+        const value = inputValues[key];
+        if (typeof value === "string") {
+            trimmedValues[key] = value.trim();
+        }
+    });
+
+    return trimmedValues
+};

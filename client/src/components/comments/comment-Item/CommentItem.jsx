@@ -4,7 +4,7 @@ import { authContext } from "../../../context/authContext";
 import { dateTransform } from "../../../utils/helperFunctions";
 
 const CommentItem = ({
-    comment,
+    text,
     username,
     _ownerId,
     onClickDeleteHandler,
@@ -42,7 +42,7 @@ const CommentItem = ({
                             </i>
                         </small>
                     </h6>
-                    <p>{comment}</p>
+                    <p>{text}</p>
                     {user?._id === _ownerId && (
                         <button
                             onClick={onCommentHandler}
