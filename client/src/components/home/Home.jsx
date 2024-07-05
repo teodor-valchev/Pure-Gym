@@ -1,7 +1,12 @@
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { authContext } from "../../context/authContext";
+
 import Path from "../../lib/paths";
 
 const Home = () => {
+    const { user,isAuthenticated } = useContext(authContext)
+    console.log(user.username);
     return (
         <div className="container-fluid p-0">
             <div
@@ -27,7 +32,9 @@ const Home = () => {
                                     Best Gym Center
                                 </h5>
                                 <h1 className="display-2 text-white text-uppercase mb-md-4">
-                                    Build Your Body Strong With Pure Gym
+                                    {isAuthenticated
+                                        ? `Welcome ${user.username}`
+                                        : "Build Your Body Strong With Pure Gym"}
                                 </h1>
                                 <Link
                                     className="btn btn-primary py-md-3 px-md-5 me-3"

@@ -14,6 +14,14 @@ export const getAllClasses = async () => {
     return result;
 };
 
+export const getAllRecentClasses = async () => {
+    const query = "0&pageSize=3";
+
+    const result = await request.get(`${BASE_URL}?${query}`);
+
+    return result;
+}
+
 export const getSingleClass = async (classId) => {
     const query = new URLSearchParams({
         where: `_id="${classId}"`,

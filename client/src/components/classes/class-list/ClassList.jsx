@@ -37,37 +37,6 @@ const ClassList = () => {
                         )}
                     </div>
                 </div>
-
-                <div className="col-lg-4">
-                        {!!classItems.length && (
-                            <>
-                                <h3 className="text-uppercase mb-4">
-                                    Recent Classes
-                                </h3>
-                                <div className="bg-dark rounded p-4">
-                                    {classItems
-                                        .slice(-3)
-                                        .reverse()
-                                        .map((recentClasses) => (
-                                            <div
-                                                key={recentClasses._id}
-                                                className="d-flex overflow-hidden mb-3"
-                                            >
-                                                <Link
-                                                    className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"
-                                                    to={Path.ClassDetails.replace(
-                                                        ":classId",
-                                                        recentClasses._id
-                                                    )}
-                                                >
-                                                    {recentClasses.title}
-                                                </Link>
-                                            </div>
-                                        ))}
-                                </div>
-                            </>
-                        ) }
-                </div>
             </div>
         </div>
     );

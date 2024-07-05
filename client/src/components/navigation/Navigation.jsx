@@ -14,6 +14,7 @@ const Navigation = () => {
         Login: false,
         Classes: false,
         Create: false,
+        Search: false,
     });
 
     const onLinkChangeHandler = (e) => {
@@ -75,6 +76,16 @@ const Navigation = () => {
                                     to={Path.Home}
                                 >
                                     Home
+                                </Link>
+                                <Link
+                                    data-link="Search"
+                                    to={Path.SearchClass}
+                                    onClick={onLinkChangeHandler}
+                                    className={`nav-item nav-link ${
+                                        linkClass.Search && "active"
+                                    }`}
+                                >
+                                    Search Class
                                 </Link>
                                 <Link
                                     onClick={onLinkChangeHandler}

@@ -7,6 +7,7 @@ import AuthGuard from "./guards/AuthGuards";
 import Navigation from "./components/navigation/Navigation";
 import Home from "./components/home/Home";
 import AboutUs from "./components/about-us/AboutUs";
+import SearchClass from "./components/search/SearchClass";
 
 import Register from "./components/users/register/Register";
 import Login from "./components/users/login/Login";
@@ -28,18 +29,28 @@ function App() {
             <Routes>
                 <Route path={Path.Home} element={<Home />}></Route>
                 <Route path={Path.About} element={<AboutUs />}></Route>
+                <Route path={Path.SearchClass} element={<SearchClass />}></Route>
 
                 <Route path={Path.Register} element={<Register />}></Route>
                 <Route path={Path.Login} element={<Login />}></Route>
 
                 <Route element={<AuthGuard />}>
                     <Route path={Path.Logout} element={<Logout />}></Route>
-                    <Route path={Path['Class_Create']} element={<ClassCreate />}></Route>
-                    <Route path={Path.ClassEdit} element={<ClassEdit />}></Route>
+                    <Route
+                        path={Path["Class_Create"]}
+                        element={<ClassCreate />}
+                    ></Route>
+                    <Route
+                        path={Path.ClassEdit}
+                        element={<ClassEdit />}
+                    ></Route>
                 </Route>
 
                 <Route path={Path.Classes} element={<ClassList />}></Route>
-                <Route path={Path.ClassDetails} element={<ClassDetails />}></Route>
+                <Route
+                    path={Path.ClassDetails}
+                    element={<ClassDetails />}
+                ></Route>
                 <Route path="*" element={<PageNotFound />}></Route>
             </Routes>
 
