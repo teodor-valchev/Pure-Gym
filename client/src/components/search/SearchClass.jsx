@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
 
@@ -9,6 +9,7 @@ import styles from './SearchClass.module.css'
 
 const SearchClass = () => {
     const [recentClassItems, setRecentClassItems] = useState([]);
+    const searchKey = useRef('')
 
     useEffect(() => {
         classService
@@ -17,30 +18,42 @@ const SearchClass = () => {
                 setRecentClassItems(res);
             })
     }, []);
+
+    const searchHandler = async (e) => {
+        e.preventDefault()
+        const title = searchKey.current.value;
+        const result = await classService.searchClass(title)
+        console.log(result);
+
+    }
     return (
-        <div className={`${styles['search-container']}`}>
+        <div className={`${styles["search-container"]}`}>
             <div className="mb-5 mt-5">
-                <div className="input-group">
+                <div className="input-group w-50">
                     <input
                         type="text"
                         className="form-control p-3"
                         placeholder="Keyword"
+                        ref={searchKey}
                     />
-                    <button className="btn btn-primary px-4">
+                    <button
+                        onClick={searchHandler}
+                        className="btn btn-primary px-4"
+                    >
                         <i className="bi bi-search"></i>
                     </button>
                 </div>
             </div>
-            <div className="col-lg-2 mb-5">
+            <div className="col-lg-2 mb-5 recent-classes">
                 {!!recentClassItems.length && (
                     <>
                         <h3 className="text-uppercase mb-4">Recent Classes</h3>
-                        <div className="bg-dark rounded p-4">
+                        <div className="bg-dark rounded p-4 d-inline-block">
                             {recentClassItems
                                 .map((recentClasses) => (
                                     <div
                                         key={recentClasses._id}
-                                        className="d-flex overflow-hidden mb-3"
+                                        className="overflow-hidden mb-3 w-100"
                                     >
                                         <Link
                                             className="d-flex align-items-center bg-light rounded-end h5 text-uppercase p-3 mb-0"

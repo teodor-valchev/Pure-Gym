@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
 
-import Path from "../../../lib/paths";
 import * as classService from "../../../services/classService";
 import ClassItem from "../class-item/ClassItem";
 import LoadingSpinner from "../../loading-spinner/LoadingSpinner";
