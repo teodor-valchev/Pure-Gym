@@ -6,7 +6,6 @@ import Path from "../../lib/paths";
 
 const Home = () => {
     const { user,isAuthenticated } = useContext(authContext)
-    console.log(user.username);
     return (
         <div className="container-fluid p-0">
             <div

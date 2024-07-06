@@ -1,34 +1,31 @@
 import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 
-
 import * as classService from "../../services/classService";
 import Path from "../../lib/paths";
-import styles from './SearchClass.module.css'
-
+import styles from "./SearchClass.module.css";
+import ClassItem from "../classes/class-item/ClassItem";
 
 const SearchClass = () => {
     const [recentClassItems, setRecentClassItems] = useState([]);
-    const searchKey = useRef('')
+    const [searchClasses, setSearchClasses] = useState([]);
+    const searchKey = useRef("");
 
     useEffect(() => {
-        classService
-            .getAllRecentClasses()
-            .then((res) => {
-                setRecentClassItems(res);
-            })
+        classService.getAllRecentClasses().then((res) => {
+            setRecentClassItems(res);
+        });
     }, []);
 
     const searchHandler = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         const title = searchKey.current.value;
-        const result = await classService.searchClass(title)
-        console.log(result);
-
-    }
+        const result = await classService.searchClass(title);
+        setSearchClasses(result);
+    };
     return (
         <div className={`${styles["search-container"]}`}>
-            <div className="mb-5 mt-5">
+            <div className={`mb-5 mt-5 ${styles["search-box"]}`}>
                 <div className="input-group w-50">
                     <input
                         type="text"
@@ -44,7 +41,16 @@ const SearchClass = () => {
                     </button>
                 </div>
             </div>
-            <div className="col-lg-2 mb-5 recent-classes">
+
+            {searchClasses ? (
+                searchClasses.map((item) => (
+                    <ClassItem key={item._id} {...item} />
+                ))
+            ) : (
+                <span>No results</span>
+            )}
+
+            <div className={`col-lg-2 mb-5 ${styles["recent-classes"]}`}>
                 {!!recentClassItems.length && (
                     <>
                         <h3 className="text-uppercase mb-4">Recent Classes</h3>

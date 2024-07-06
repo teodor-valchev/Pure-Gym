@@ -1,4 +1,25 @@
-.search-container{
+.search-container {
     display: flex;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
+    width: 60%;
+    margin-left: 31rem;
+}
+
+.recent-classes {
+    display: flex;
+    margin-top: 46px;
+    flex-direction: column;
+}
+
+span {
+    display: flex;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    color: #222429;
+    font-family: "Oswald", sans-serif;
 }

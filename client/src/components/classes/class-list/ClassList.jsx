@@ -22,7 +22,7 @@ const ClassList = () => {
         <div className="container-fluid p-5">
             {showSpinner && <LoadingSpinner />}
             <div className="row g-5">
-                <div className="col-lg-8">
+                <div className="col-lg-12">
                     <div className="row g-5">
                         {classItems.length ? (
                             classItems.map((item) => (

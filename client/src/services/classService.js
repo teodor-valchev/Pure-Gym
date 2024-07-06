@@ -32,6 +32,10 @@ export const searchClass = async (title) => {
     const findClasses = classes.filter((item) =>
         item.title.toLowerCase().includes(title.toLowerCase())
     );
+
+    if (findClasses.length === 0) {
+        return;
+    }
     const whereClause = findClasses
         .map((item) => `title%3D"${encodeURIComponent(item.title)}"`)
         .join("%20OR%20");
