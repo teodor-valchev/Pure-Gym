@@ -12,6 +12,7 @@ import SearchClass from "./components/search/SearchClass";
 import Register from "./components/users/register/Register";
 import Login from "./components/users/login/Login";
 import Logout from "./components/users/logout/Logout";
+import MyProfile from "./components/users/my-profile/MyProfile";
 
 import ClassCreate from "./components/classes/class-create/ClassCreate";
 import ClassList from "./components/classes/class-list/ClassList";
@@ -35,6 +36,7 @@ function App() {
                 <Route path={Path.Login} element={<Login />}></Route>
 
                 <Route element={<AuthGuard />}>
+                    <Route path={Path.MyProfile} element={<MyProfile />}></Route>
                     <Route path={Path.Logout} element={<Logout />}></Route>
                     <Route
                         path={Path["Class_Create"]}

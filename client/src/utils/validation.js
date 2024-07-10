@@ -9,6 +9,7 @@ export const validateUserRegisterValues = (inputValues) => {
     const email = inputValues.email;
     const password = inputValues.password;
     const repeatPass = inputValues.repeatPass;
+    const phoneNumber = inputValues.phoneNumber;
 
     if (!isAllFieldsRequired(username, email, password, repeatPass)) {
         inputErrors.AllFieldsRequired = "All fields are required!";
@@ -19,6 +20,13 @@ export const validateUserRegisterValues = (inputValues) => {
     }
     if (email.length < 10) {
         inputErrors.Email = "Email must be at least 10 characters!";
+    }
+    if (phoneNumber.length < 10) {
+        inputErrors.PhoneNumber = "Phone Number must be at least 10 characters!";
+    }
+    if (isNaN(phoneNumber)) {
+        inputErrors.PhoneNumber =
+            "Phone Number must contain only numbers!";
     }
     if (password === "") {
         inputErrors.Password = "Password is empty!";

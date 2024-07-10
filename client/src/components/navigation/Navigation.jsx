@@ -15,6 +15,7 @@ const Navigation = () => {
         Classes: false,
         Create: false,
         Search: false,
+        Profile: false,
     });
 
     const onLinkChangeHandler = (e) => {
@@ -127,6 +128,19 @@ const Navigation = () => {
                                             data-link="Logout"
                                         >
                                             Logout
+                                        </Link>
+                                        <Link
+                                            className={`nav-item nav-link 
+                                                ${
+                                                    linkClass.Profile && "active"
+                                                }`}
+                                            to={Path.MyProfile.replace(
+                                                ":profileId",
+                                                user._id
+                                            )}
+                                            data-link="Profile"
+                                        >
+                                            My Profile
                                         </Link>
                                     </div>
                                 ) : (

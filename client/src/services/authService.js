@@ -19,3 +19,11 @@ export const logout = async () => {
 
     return result;
 };
+
+export const getUser = () => {
+    const user = localStorage.getItem('user');
+
+    const result = JSON.parse(user)
+
+    return result;
+};

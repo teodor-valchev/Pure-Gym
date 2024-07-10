@@ -10,19 +10,21 @@ import styles from "./Register.module.css";
 const RegisterKeys = {
     Username: "username",
     Email: "email",
+    PhoneNumber: "phoneNumber",
     Password: "password",
     RepeatPassword: "repeatPass",
 };
 
 const Register = () => {
     const { registerSubmitHandler } = useContext(authContext);
-    const { values, errors, submitting, onChange, OnFormSubmit } = useForm(
+    const { values, errors, onChange, OnFormSubmit } = useForm(
         registerSubmitHandler,
         {
             [RegisterKeys.Username]: "",
             [RegisterKeys.Email]: "",
             [RegisterKeys.Password]: "",
             [RegisterKeys.RepeatPassword]: "",
+            [RegisterKeys.PhoneNumber]: "",
         }
     );
 
@@ -39,7 +41,10 @@ const Register = () => {
                     </Alert>
                 )}
 
-                <form className={`bg-dark h-auto ${styles['form-resp']}`} onSubmit={OnFormSubmit}>
+                <form
+                    className={`bg-dark h-auto ${styles["form-resp"]}`}
+                    onSubmit={OnFormSubmit}
+                >
                     <h2 className="d-flex text-light justify-content-center pt-3 ">
                         Register
                     </h2>
@@ -70,6 +75,21 @@ const Register = () => {
                                 placeholder="Email..."
                                 onChange={onChange}
                                 value={values[RegisterKeys.Email]}
+                            />
+                        </div>
+                        <div className="col-5 pb-3 pt-3">
+                            {errors.PhoneNumber && (
+                                <p className={styles.error}>
+                                    {errors.PhoneNumber}
+                                </p>
+                            )}
+                            <input
+                                type="text"
+                                className="form-control bg-light border-0 px-4"
+                                name={RegisterKeys.PhoneNumber}
+                                placeholder="Phone Number..."
+                                onChange={onChange}
+                                value={values[RegisterKeys.PhoneNumber]}
                             />
                         </div>
                         <div className="col-5 pb-3 pt-3">
