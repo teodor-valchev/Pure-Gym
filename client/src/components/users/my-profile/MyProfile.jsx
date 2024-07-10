@@ -1,22 +1,22 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
-import * as authService from '../../../services/authService.js'
+import * as authService from "../../../services/authService.js";
 import "./MyProfile.css";
 
 const MyProfile = () => {
     const [user, setUser] = useState({});
 
     useEffect(() => {
-        const currentUser = authService.getUser()
-        setUser(currentUser)
-    }, [])
+        const currentUser = authService.getUser();
+        setUser(currentUser);
+    }, []);
 
     console.log(user);
     return (
         <div className="page-content page-container" id="page-content">
             <div className="padding">
-                <div className="row container d-flex justify-content-center">
+                <div className="row container d-flex justify-content-center profile-section">
                     <div className="col-xl-6 col-md-12">
                         <div className="card user-card-full">
                             <div className="row m-l-0 m-r-0">

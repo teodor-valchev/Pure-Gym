@@ -22,11 +22,11 @@ export const validateUserRegisterValues = (inputValues) => {
         inputErrors.Email = "Email must be at least 10 characters!";
     }
     if (phoneNumber.length < 10) {
-        inputErrors.PhoneNumber = "Phone Number must be at least 10 characters!";
+        inputErrors.PhoneNumber =
+            "Phone Number must be at least 10 characters!";
     }
     if (isNaN(phoneNumber)) {
-        inputErrors.PhoneNumber =
-            "Phone Number must contain only numbers!";
+        inputErrors.PhoneNumber = "Phone Number must contain only numbers!";
     }
     if (password === "") {
         inputErrors.Password = "Password is empty!";
@@ -57,11 +57,11 @@ export const validateClassValues = (inputValues) => {
 
     inputValues = trimWhiteSpaces(inputValues);
 
-    const title = inputValues.title
-    const description = inputValues.description
-    const phoneNumber = inputValues["phone-number"]
-    const age = inputValues.age
-    const image = inputValues.image
+    const title = inputValues.title;
+    const description = inputValues.description;
+    const phoneNumber = inputValues["phone-number"];
+    const age = inputValues.age;
+    const image = inputValues.image;
 
     if (!isAllFieldsRequired(title, description, phoneNumber, age, image)) {
         inputErrors.AllFieldsRequired = "All fields are required!";

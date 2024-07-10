@@ -21,9 +21,9 @@ export const logout = async () => {
 };
 
 export const getUser = () => {
-    const user = localStorage.getItem('user');
+    const user = localStorage.getItem("user");
 
-    const result = JSON.parse(user)
+    const result = JSON.parse(user);
 
     return result;
 };
