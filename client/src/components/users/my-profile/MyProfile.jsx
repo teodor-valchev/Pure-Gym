@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
 
 import * as authService from "../../../services/authService.js";
 import "./MyProfile.css";
