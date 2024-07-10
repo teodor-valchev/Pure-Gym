@@ -12,7 +12,6 @@ const MyProfile = () => {
         setUser(currentUser);
     }, []);
 
-    console.log(user);
     return (
         <div className="page-content page-container" id="page-content">
             <div className="padding">
