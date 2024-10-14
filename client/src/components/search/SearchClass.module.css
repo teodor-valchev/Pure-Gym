@@ -23,3 +23,13 @@ span {
     color: #222429;
     font-family: "Oswald", sans-serif;
 }
+
+@media (max-width: 768px) {
+    .search-box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: -webkit-fill-available;
+        margin-left: 0;
+    }
+}
